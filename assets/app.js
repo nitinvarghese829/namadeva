@@ -7,6 +7,7 @@
  */
 require('./styles/app.scss');
 import './styles/app.scss';
+import 'animate.css';
 
 const $ = require('jquery');
 
@@ -16,6 +17,7 @@ import 'bootstrap';
 
 // import Swiper JS
 import Swiper from 'swiper';
+import { Autoplay, EffectFade } from 'swiper/modules';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -23,6 +25,7 @@ import 'swiper/css/pagination';
 $(document).ready(function() {
     console.log('This log comes from assets/app.js - welcome to jQuery! 🎉');
     var swiper = new Swiper(".mySwiper", {
+        modules: [Autoplay],
         slidesPerView: 4,
         spaceBetween: 5,
         loop: true,
@@ -38,6 +41,7 @@ $(document).ready(function() {
     });
 
     var swiper = new Swiper(".testimonial-swiper", {
+        modules: [Autoplay],
         slidesPerView: 1,
         spaceBetween: 5,
         loop: true,
@@ -51,5 +55,27 @@ $(document).ready(function() {
             clickable: true,
         },
     });
+
+
+    var swiperApp = new Swiper(".application-swipper", {
+        modules: [Autoplay],
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        freeMode: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        }
+    });
+
 });
 

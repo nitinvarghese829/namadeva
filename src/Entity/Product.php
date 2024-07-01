@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -18,7 +19,7 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
     #[ORM\Column]
@@ -29,6 +30,12 @@ class Product
      */
     #[ORM\OneToMany(targetEntity: ProductMedia::class, mappedBy: 'product', cascade: ['persist'], orphanRemoval: true)]
     private Collection $productMedia;
+
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    private ?ProductCategory $category = null;
+
+    #[ORM\Column]
+    private ?bool $isTrending = false;
 
     public function __construct()
     {
@@ -102,6 +109,30 @@ class Product
                 $productMedium->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?ProductCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?ProductCategory $category): static
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function isTrending(): ?bool
+    {
+        return $this->isTrending;
+    }
+
+    public function setIsTrending(bool $isTrending): static
+    {
+        $this->isTrending = $isTrending;
 
         return $this;
     }

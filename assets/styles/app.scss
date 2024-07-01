@@ -14,6 +14,21 @@ body {
 .bg-body-tertiary{
     background: #424f66 !important;
 }
+.text-tertiary{
+    color: #e1e0e7 !important;
+}
+
+.border-radius-12{
+    border-radius: 12px;
+}
+.w-200{
+    width: 200px;
+    margin: auto;
+}
+.w-180{
+    width: 180px;
+    margin: auto;
+}
 
 section.hero img {
     height: 300px;
@@ -68,5 +83,134 @@ section.testimonials{
     .testimony{
         font-family: "Playwrite NZ", cursive;
         font-optical-sizing: auto;
+    }
+}
+
+section.meet-our-team{
+    .directors{
+        .director{
+            width: 300px;
+            border-radius: 12px;
+            .w-250{
+                width: 200px;
+                margin: auto;
+            }
+        }
+    }
+}
+
+section.infographic-wrapper{
+    .infographic {
+        .icon {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .row > div {
+            padding: 20px;
+        }
+    }
+}
+
+section.product-listing{
+    .nav-underline .nav-link.active{
+        color: #424f66 !important;
+    }
+    .product {
+        text-align: center;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .product img {
+        width: 80%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .product .details{
+        width: 80%;
+    }
+    .product h3 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #333;
+    }
+    .product p {
+        font-size: 1.1em;
+        color: #555;
+    }
+    .product:hover {
+        transform: translateY(-10px);
+    }
+    .product:hover img {
+        transform: scale(1.05);
+    }
+    .product img {
+        transition: opacity 0.3s ease-in-out;
+    }
+    .product:hover img {
+        opacity: 0.8;
+    }
+}
+
+section.page-title{
+    background: #fef8ea;
+}
+
+section.applications{
+    img{
+        max-height: 500px;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        color: #424f66 !important;
+    }
+    .app-name{
+        bottom: 30px;
+        right: 0;
+        left: 69%;
+        position: absolute !important;
+        background: rgb(5 4 4 / 77%);
+        text-align: center;
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+    }
+
+    .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
     }
 }

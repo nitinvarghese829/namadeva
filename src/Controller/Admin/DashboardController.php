@@ -3,7 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Admin;
+use App\Entity\Application;
+use App\Entity\Enquiry;
 use App\Entity\Product;
+use App\Entity\ProductCategory;
+use App\Entity\Services;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -28,6 +32,8 @@ class DashboardController extends AbstractDashboardController
     {
         $sql = "SELECT count(*) FROM product";
         $count['product'] = $this->connection->fetchOne($sql);
+        $sql = "SELECT count(*) FROM services";
+        $count['services'] = $this->connection->fetchOne($sql);
 
         return $this->render('admin/dashboard.html.twig', ['count' => $count]);
     }
@@ -47,7 +53,13 @@ class DashboardController extends AbstractDashboardController
             ]),
             MenuItem::subMenu('Product', 'fa fa-tags')->setSubItems([
                 MenuItem::linkToCrud('Product', 'fa-cart-shopping', Product::class),
+                MenuItem::linkToCrud('Category', 'fa-cart-shopping', ProductCategory::class),
             ]),
+            MenuItem::subMenu('Service', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('Services', 'fa-cart-shopping', Services::class),
+            ]),
+            MenuItem::linkToCrud('Application', 'fa-cart-shopping', Application::class),
+            MenuItem::linkToCrud('Enquiry', 'fa-cart-shopping', Enquiry::class),
             MenuItem::linkToLogout('Logout', 'fa fa-sign-out'),
 
         ];

@@ -11,6 +11,16 @@ vich_uploader:
             upload_destination: '%kernel.project_dir%/public/uploads/product'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
+        servicesMedia:
+            uri_prefix: /uploads/services
+            upload_destination: '%kernel.project_dir%/public/uploads/services'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        applicationMedia:
+            uri_prefix: /uploads/application
+            upload_destination: '%kernel.project_dir%/public/uploads/application'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
 
         your_image_mapping:
             uri_prefix: /uploads/category

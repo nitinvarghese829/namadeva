@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Applications - Namadeva Steels{% endblock %}
+
+{% block body %}
+    <section class="page-title py-4">
+        <div class="text-center animate__animated  animate__fadeInDown">
+            <h2 class="text-primary mb-3">Application</h2>
+        </div>
+        <div class="text-center container animate__animated  animate__fadeInDown">
+            <p class="text-secondary m-0">Industry applications of the products that we offer</p>
+        </div>
+    </section>
+
+    <section class="applications">
+        <div class="swiper application-swipper">
+            <div class="swiper-wrapper">
+                {% for application in applications %}
+                    <div class="swiper-slide">
+                        <img src="{{ asset('uploads/application') }}/{{ application.applicationMedia[0].image }}" alt="{{ application.applicationMedia[0].image }}" />
+                        <h3 class="app-name text-primary p-3">{{ application.name }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+            </div>
+        </div>
+
+
+
+    </section>
+{% endblock %}

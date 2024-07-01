@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact Us - Namadeva Steels{% endblock %}
+
+{% block body %}
+    <section class="page-title py-4">
+        <div class="text-center animate__animated  animate__fadeInDown">
+            <h2 class="text-primary mb-3">Contact Us</h2>
+        </div>
+        <div class="text-center container animate__animated  animate__fadeInDown">
+            <p class="text-secondary m-0">Feel free to contact us, all that you have to do is fill the form. Our representatives will contact you at the soonest.</p>
+        </div>
+    </section>
+
+    <section class="contact-us">
+        <div class="row m-0">
+            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                <img class="w-100 h-100 object-fit-cover" src="{{ asset('images/contactus.png') }}" alt="contact-us" />
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 py-3">
+                {{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">{{ form_label(form.firstname) }}</label>
+                            {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'id': 'firstname', 'required': true}}) }}
+                            {{ form_errors(form.firstname) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">{{ form_label(form.lastname) }}</label>
+                            {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'id': 'lastname', 'required': true}}) }}
+                            {{ form_errors(form.lastname) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">{{ form_label(form.phone) }}</label>
+                            {{ form_widget(form.phone, {'attr': {'class': 'form-control', 'id': 'phone', 'required': true}}) }}
+                            {{ form_errors(form.phone) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">{{ form_label(form.email) }}</label>
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'id': 'email', 'type': 'email', 'required': true}}) }}
+                            {{ form_errors(form.email, {'attr': {'class': 'text-danger'}}) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="mb-3">
+                            <label for="pincode" class="form-label">{{ form_label(form.pincode) }}</label>
+                            {{ form_widget(form.pincode, {'attr': {'class': 'form-control', 'id': 'pincode', 'required': true}}) }}
+                            {{ form_errors(form.pincode) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="mb-3">
+                            <label for="requirement" class="form-label">{{ form_label(form.requirement) }}</label>
+                            {{ form_widget(form.requirement, {'attr': {'class': 'form-control', 'id': 'requirement', 'required': true}}) }}
+                            {{ form_errors(form.requirement) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+
+    <section class="address bg-secondary">
+        <div class="container">
+            <div class="text-center py-3">
+                <h2 class="text-primary m-0">Our Offices</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class=" p-3 ">
+                        <h4 class="text-primary my-2">Head Office</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3889.3556526891116!2d77.64112817507497!3d12.884837487422576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s12.884847%2C%2077.643716VJMV%2BWFP%20Bengaluru%2C%20Karnataka%20Bengaluru%2C%20Ka%2C%20560068%2C%20India!5e0!3m2!1sen!2sin!4v1719647591456!5m2!1sen!2sin" width="450" height="450" style="border-radius:12px; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="text-tertiary mb-2">
+                            Address:-
+                            #244/239/1-4, Singasandra Village, Behind State Bank Of India, Hosur Man Road, Bengaluru 560 068
+                        </div>
+                        <div class="text-tertiary mb-2">
+                            Office Number : +91 94480 62012, +91 80 4111 5133, +91 99162 25677, +91 99165 56348
+                        </div>
+                        <div class="text-tertiary">
+                            Email:- namadeva.nsc@gmail.com
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class=" p-3 ">
+                        <h4 class="text-primary my-2">Branch Office</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5125429475142!2d77.67795857507369!3d12.810121787490628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c3ee17216c7%3A0x84053d8786ff16b4!2sNamadeva%20Steel%20Center%20-%20Bommasandra!5e0!3m2!1sen!2sin!4v1719648648129!5m2!1sen!2sin" width="450" height="450" style="border-radius:12px; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="text-tertiary mb-2">
+                            Address:-
+                            #23, 63, Kachanayakanahalli, Near Bostik India,Bommasandra, Industrial Area, Off Hosur Main Road, Bangalore 560 099
+                        </div>
+                        <div class="text-tertiary mb-2">
+                            Office Number : +91 99866 47738, +91 95381 54200, +91 80 4160 6720
+                        </div>
+                        <div class="text-tertiary">
+                            Email:- namadeva.nsc@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
