@@ -15,7 +15,7 @@ require('bootstrap');
 import 'bootstrap';
 
 
-// import Swiper JS
+// import Swiper JS 
 import Swiper from 'swiper';
 import { Autoplay, EffectFade } from 'swiper/modules';
 // import Swiper styles
