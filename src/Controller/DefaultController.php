@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Enquiry;
+use App\Entity\Pages;
 use App\Form\EnquiryFormType;
+use App\Repository\PagesRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,23 +16,29 @@ use Symfony\Component\Routing\Attribute\Route;
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
-    public function index(ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository, PagesRepository $pagesRepository): Response
     {
+        $page = $pagesRepository->findOneBy(['name' => 'home']);
         $products = $productRepository->findBy(['isTrending' => 1]);
         return $this->render('default/index.html.twig', [
             'products' => $products,
+            'page' => $page,
         ]);
     }
 
     #[Route('/about-us', name: 'app_about_us')]
-    public function aboutUs(): Response
+    public function aboutUs(PagesRepository $pagesRepository): Response
     {
-        return $this->render('default/about-us.html.twig', []);
+        $page = $pagesRepository->findOneBy(['name' => 'about us']);
+        return $this->render('default/about-us.html.twig', [
+            'page' => $page,
+        ]);
     }
 
     #[Route('/contact-us', name: 'app_contact_us')]
-    public function contactUs(Request $request, EntityManagerInterface $entityManager): Response
+    public function contactUs(Request $request, EntityManagerInterface $entityManager, PagesRepository $pagesRepository): Response
     {
+        $page = $pagesRepository->findOneBy(['name' => 'contact us']);
         $enquiry = new Enquiry();
         $form = $this->createForm(EnquiryFormType::class, $enquiry);
 
@@ -49,7 +57,8 @@ class DefaultController extends AbstractController
         }
 
         return $this->render('default/contact-us.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'page' => $page,
         ]);
     }
 }
