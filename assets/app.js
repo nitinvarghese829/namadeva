@@ -23,7 +23,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 $(document).ready(function() {
-    console.log('This log comes from assets/app.js - welcome to jQuery! 🎉');
+    console.log('This log comes from assets/app.js - wel come to jQuery! 🎉');
     var swiper = new Swiper(".mySwiper", {
         modules: [Autoplay],
         slidesPerView: 4,
