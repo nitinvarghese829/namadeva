@@ -1,0 +1,90 @@
+[30-Jun-2024 21:36:27 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[30-Jun-2024 21:37:26 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[30-Jun-2024 21:37:40 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[30-Jun-2024 21:37:48 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:46:28 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:47:45 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:47:50 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:49:22 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:49:41 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
+[01-Jul-2024 06:50:13 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/g0d4jisb0ovl/repositories/namadeva/.env" environment file. in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php:554
+Stack trace:
+#0 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(106): Symfony\Component\Dotenv\Dotenv->doLoad()
+#1 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php(150): Symfony\Component\Dotenv\Dotenv->loadEnv()
+#2 /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/runtime/SymfonyRuntime.php(107): Symfony\Component\Dotenv\Dotenv->bootEnv()
+#3 /home/g0d4jisb0ovl/repositories/namadeva/vendor/autoload_runtime.php(16): Symfony\Component\Runtime\SymfonyRuntime->__construct()
+#4 /home/g0d4jisb0ovl/repositories/namadeva/bin/console(15): require_once('/home/g0d4jisb0...')
+#5 {main}
+  thrown in /home/g0d4jisb0ovl/repositories/namadeva/vendor/symfony/dotenv/Dotenv.php on line 554
