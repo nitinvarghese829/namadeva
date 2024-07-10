@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Enquiry;
+use App\Entity\Product;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +21,11 @@ class EnquiryFormType extends AbstractType
             ->add('phone', null)
             ->add('email', EmailType::class)
             ->add('pincode', null)
-            ->add('requirement', null);
+            ->add('requirement', null)
+            ->add('product', EntityType::class, [
+                'class' => Product::class,
+                'choice_label' => 'name',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
