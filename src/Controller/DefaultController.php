@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Enquiry;
 use App\Entity\Pages;
 use App\Form\EnquiryFormType;
+use App\Repository\BlogsRepository;
 use App\Repository\PagesRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -32,6 +33,40 @@ class DefaultController extends AbstractController
         $page = $pagesRepository->findOneBy(['name' => 'about us']);
         return $this->render('default/about-us.html.twig', [
             'page' => $page,
+        ]);
+    }
+
+    #[Route('/knowledge-hub', name: 'app_knowledge_hub')]
+    public function knowledgeHub(PagesRepository $pagesRepository): Response
+    {
+        $page = $pagesRepository->findOneBy(['name' => 'about us']);
+        return $this->render('knowledge-hub/knowledgeHub.html.twig', [
+            'page' => $page,
+        ]);
+    }
+
+    #[Route('/knowledge-hub/blogs', name: 'app_knowledge_hub_blogs')]
+    public function knowledgeHubBlogs(PagesRepository $pagesRepository, BlogsRepository $blogsRepository): Response
+    {
+        $blogs = $blogsRepository->findAll();
+        $page = $pagesRepository->findOneBy(['name' => 'about us']);
+        return $this->render('knowledge-hub/blogs.html.twig', [
+            'page' => $page,
+            'blogs' => $blogs,
+        ]);
+    }
+
+    #[Route('/knowledge-hub/blogs/{slug}', name: 'app_knowledge_hub_blogs_blog')]
+    public function blog(PagesRepository $pagesRepository, BlogsRepository $blogsRepository, $slug = null): Response
+    {
+        $blog = $blogsRepository->findOneBy(['slug' => $slug]);
+        $randomBlogs = $blogsRepository->findRandomBlogs(3);
+
+        $page = $pagesRepository->findOneBy(['name' => 'about us']);
+        return $this->render('knowledge-hub/blog.html.twig', [
+            'page' => $page,
+            'blog' => $blog,
+            'randomBlogs' => $randomBlogs,
         ]);
     }
 

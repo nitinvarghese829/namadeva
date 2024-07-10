@@ -32,6 +32,9 @@ class Enquiry
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $requirement = null;
 
+    #[ORM\ManyToOne(inversedBy: 'enquiries')]
+    private ?Product $product = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Enquiry
     public function setRequirement(?string $requirement): static
     {
         $this->requirement = $requirement;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): static
+    {
+        $this->product = $product;
 
         return $this;
     }

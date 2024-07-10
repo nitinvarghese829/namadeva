@@ -37,10 +37,23 @@ class Product
     #[ORM\Column]
     private ?bool $isTrending = false;
 
+    /**
+     * @var Collection<int, Enquiry>
+     */
+    #[ORM\OneToMany(targetEntity: Enquiry::class, mappedBy: 'product')]
+    private Collection $enquiries;
+
     public function __construct()
     {
         $this->productMedia = new ArrayCollection();
+        $this->enquiries = new ArrayCollection();
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 
     public function getId(): ?int
     {
@@ -133,6 +146,36 @@ class Product
     public function setIsTrending(bool $isTrending): static
     {
         $this->isTrending = $isTrending;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Enquiry>
+     */
+    public function getEnquiries(): Collection
+    {
+        return $this->enquiries;
+    }
+
+    public function addEnquiry(Enquiry $enquiry): static
+    {
+        if (!$this->enquiries->contains($enquiry)) {
+            $this->enquiries->add($enquiry);
+            $enquiry->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEnquiry(Enquiry $enquiry): static
+    {
+        if ($this->enquiries->removeElement($enquiry)) {
+            // set the owning side to null (unless already changed)
+            if ($enquiry->getProduct() === $this) {
+                $enquiry->setProduct(null);
+            }
+        }
 
         return $this;
     }

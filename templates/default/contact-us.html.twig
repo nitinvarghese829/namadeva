@@ -51,11 +51,18 @@
                             {{ form_errors(form.email, {'attr': {'class': 'text-danger'}}) }}
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col-md-6 col-sm-12">
                         <div class="mb-3">
                             <label for="pincode" class="form-label">{{ form_label(form.pincode) }}</label>
                             {{ form_widget(form.pincode, {'attr': {'class': 'form-control', 'id': 'pincode', 'required': true}}) }}
                             {{ form_errors(form.pincode) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="pincode" class="form-label">{{ form_label(form.product) }}</label>
+                            {{ form_widget(form.product, {'attr': {'class': 'form-control', 'id': 'product', 'required': true}}) }}
+                            {{ form_errors(form.product) }}
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12">
