@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Admin;
 use App\Entity\Application;
 use App\Entity\Enquiry;
+use App\Entity\Pages;
 use App\Entity\Product;
 use App\Entity\ProductCategory;
 use App\Entity\Services;
@@ -60,6 +61,7 @@ class DashboardController extends AbstractDashboardController
             ]),
             MenuItem::linkToCrud('Application', 'fa-cart-shopping', Application::class),
             MenuItem::linkToCrud('Enquiry', 'fa-cart-shopping', Enquiry::class),
+            MenuItem::linkToCrud('Pages', 'fa-cart-shopping', Pages::class),
             MenuItem::linkToLogout('Logout', 'fa fa-sign-out'),
 
         ];

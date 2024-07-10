@@ -5,10 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
         <meta name="author" content="">
 
         <title>{% block title %}Namadeva Steels{% endblock %}</title>
+
+        <meta name="description" content="{% block meta_description %}Default meta description.{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}default, keywords{% endblock %}">
         <link rel="icon" href="{{ asset('images/favicon.png') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
