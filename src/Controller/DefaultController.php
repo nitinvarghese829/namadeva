@@ -8,10 +8,15 @@ use App\Form\EnquiryFormType;
 use App\Repository\BlogsRepository;
 use App\Repository\PagesRepository;
 use App\Repository\ProductRepository;
+use App\Service\EmailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Attribute\Route;
 
 class DefaultController extends AbstractController
@@ -71,7 +76,7 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/contact-us', name: 'app_contact_us')]
-    public function contactUs(Request $request, EntityManagerInterface $entityManager, PagesRepository $pagesRepository): Response
+    public function contactUs(Request $request, EntityManagerInterface $entityManager, PagesRepository $pagesRepository, EmailerService $emailerService): Response
     {
         $page = $pagesRepository->findOneBy(['name' => 'contact us']);
         $enquiry = new Enquiry();
@@ -88,6 +93,16 @@ class DefaultController extends AbstractController
             // Add a flash message or redirect to a 'thank you' page
             $this->addFlash('success', 'Enquiry submitted successfully!');
 
+            $subject = 'New Enquiry from ' . $page->getName();
+            $body = '
+            <p>Name: ' . $form->get('firstname')->getData() . ' ' . $form->get('lastname')->getData() . '</p>
+            <p>Email: ' . $form->get('email')->getData() . '</p>
+            <p>Phone: ' . $form->get('phone')->getData() . '</p>
+            <p>Pincode: ' . $form->get('pincode')->getData() . '</p>
+            <p>Message: ' . $form->get('requirement')->getData() . '</p>
+            <p>Product: '. $form->get('product')->getData()->getName() .'</p>
+            ';
+            $emailerService->sendEmail($body, $subject);
             return $this->redirectToRoute('app_contact_us');
         }
 
@@ -96,4 +111,5 @@ class DefaultController extends AbstractController
             'page' => $page,
         ]);
     }
+
 }

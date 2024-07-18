@@ -29,6 +29,9 @@ class BlogsCrudController extends AbstractCrudController
             CollectionField::new('blogsMedia')->setEntryType(BlogsImageType::class)
                 ->setFormTypeOptions(['by_reference' => false])
                 ->onlyOnForms(),
+            TextField::new('title')->onlyOnForms(),
+            TextEditorField::new('keywords')->onlyOnForms(),
+            TextEditorField::new('metaDescription')->onlyOnForms(),
         ];
     }
 
