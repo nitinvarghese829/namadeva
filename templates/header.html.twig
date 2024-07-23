@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="{{ path('app_homepage') }}">
             <img src="{{ asset('images/logo.png') }}" width="180" class="d-inline-block align-top" alt="Namadeva">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,16 @@
             {% set route = app.request.attributes.get('_route') %}
             <ul class="navbar-nav">
                 <li class="nav-item {{ route == 'app_homepage' ? 'active' }} px-2"><a class="nav-link text-white" href="{{ path('app_homepage') }}">Home</a></li>
-                <li class="nav-item {{ route == 'app_product_index' ? 'active' }} px-2"><a class="nav-link text-white" href="{{ path('app_product_index') }}">Our Products</a></li>
+                <li class="nav-item {{ route == 'app_product_index' ? 'active' }}  dropdown px-2">
+                    <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Our Products
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path('app_product_index') }}?type=metal-sheets" data-tab="metal-sheets">Metal Sheets</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_product_index') }}?type=structural-steel" data-tab="structural-steel">Structural Steel</a></li>
+                    </ul>
+                </li>
+
                 <li class="nav-item {{ route == 'app_application' ? 'active' }} px-2"><a class="nav-link text-white" href="{{ path('app_application') }}">Applications</a></li>
                 <li class="nav-item {{ route == 'app_about_us' ? 'active' }} px-2"><a class="nav-link text-white" href="{{ path('app_about_us') }}">About Us</a></li>
                 <li class="nav-item {{ route == 'app_knowledge_hub' ? 'active' }} px-2"><a class="nav-link text-white" href="{{ path('app_knowledge_hub') }}">Knowledge Hub</a></li>

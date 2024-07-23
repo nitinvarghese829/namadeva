@@ -9,6 +9,13 @@
 
         <title>{% block title %}Namadeva Steels{% endblock %}</title>
 
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-584CTQSB');</script>
+
+
         <meta name="description" content="{% block meta_description %}Default meta description.{% endblock %}">
         <meta name="keywords" content="{% block meta_keywords %}default, keywords{% endblock %}">
         <link rel="icon" href="{{ asset('images/favicon.png') }}">
@@ -22,7 +29,9 @@
         {% endblock %}
     </head>
     <body>
-        {% include 'header.html.twig' %}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-584CTQSB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    {% include 'header.html.twig' %}
         {% block body %}{% endblock %}
         <a href="https://api.whatsapp.com/send?phone=+919901500948&text=Hi, Could we connect now?" class="float d-flex justify-content-center align-items-center" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="my-float bi bi-whatsapp" viewBox="0 0 16 16">
