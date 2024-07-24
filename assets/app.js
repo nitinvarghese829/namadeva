@@ -25,7 +25,6 @@ import 'swiper/css/pagination';
 
 import {CountUp} from "countup.js"
 $(document).ready(function() {
-    console.log('This log comes from assets/app.js - wel come to jQuery! 🎉');
     var swiper = new Swiper(".mySwiper", {
         modules: [Autoplay],
         slidesPerView: 4,
@@ -46,6 +45,7 @@ $(document).ready(function() {
         modules: [Autoplay],
         slidesPerView: 1,
         spaceBetween: 5,
+        speed: 600,
         loop: true,
         autoplay: {
             delay: 2500,
