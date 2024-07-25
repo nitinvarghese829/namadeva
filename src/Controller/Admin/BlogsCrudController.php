@@ -32,8 +32,8 @@ class BlogsCrudController extends AbstractCrudController
                 ->setFormTypeOptions(['by_reference' => false])
                 ->onlyOnForms(),
             TextField::new('title')->onlyOnForms(),
-            TextEditorField::new('keywords')->onlyOnForms(),
-            TextEditorField::new('metaDescription')->onlyOnForms(),
+            TextField::new('keywords')->onlyOnForms(),
+            TextField::new('metaDescription')->onlyOnForms(),
         ];
     }
 

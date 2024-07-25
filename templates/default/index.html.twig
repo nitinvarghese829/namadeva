@@ -128,10 +128,10 @@
         <div class="container">
             <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
                 {% for product in products %}
-                    <div class="image-container">
-                        <img src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}">
+                    <div  itemscope itemtype="https://schema.org/Product" class="image-container">
+                        <img itemprop="image" src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}">
                         <div class="overlay">
-                            <h4>{{ product.name }}</h4>
+                            <h4 itemprop="name">{{ product.name }}</h4>
                         </div>
                     </div>
                 {% endfor %}
