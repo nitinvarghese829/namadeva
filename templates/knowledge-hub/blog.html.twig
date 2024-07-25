@@ -3,6 +3,15 @@
 {% block title %}{{ blog.title }}{% endblock %}
 {% block meta_description %}{{ blog.metaDescription }}{% endblock %}
 {% block meta_keywords %}{{ blog.keywords }}{% endblock %}
+{% block meta_tags %}
+    <!-- Other meta tags -->
+    <meta property="og:title" content="{{ blog.title }}" />
+    <meta property="og:description" content="{{ blog.metaDescription }}" />
+    <meta property="og:image" content="{{ asset('uploads/blogs/' ~ blog.blogsMedia[0].image) }}" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="article" />
+    <!-- Other meta tags -->
+{% endblock %}
 
 {% block body %}
     <section class="page-title py-4">
