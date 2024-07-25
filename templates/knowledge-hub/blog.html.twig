@@ -7,9 +7,17 @@
     <!-- Other meta tags -->
     <meta property="og:title" content="{{ blog.title }}" />
     <meta property="og:description" content="{{ blog.metaDescription }}" />
-    <meta property="og:image" content="{{ asset('uploads/blogs/' ~ blog.blogsMedia[0].image) }}" />
+    <meta property="og:image" content="https://namadevasteel.com{{ asset('uploads/blogs/' ~ blog.blogsMedia[0].image) }}" />
     <meta property="og:url" content="{{ app.request.uri }}" />
     <meta property="og:type" content="article" />
+    <!-- Other meta tags -->
+
+    <!-- Other meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ blog.title }}" />
+    <meta name="twitter:description" content="{{ blog.metaDescription }}" />
+    <meta name="twitter:image" content="https://namadevasteel.com{{ asset('uploads/blogs/' ~ blog.blogsMedia[0].image) }}" />
+    <meta name="twitter:url" content="{{ app.request.uri }}" />
     <!-- Other meta tags -->
 {% endblock %}
 
