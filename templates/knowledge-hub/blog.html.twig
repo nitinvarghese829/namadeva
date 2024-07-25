@@ -24,17 +24,19 @@
                                 <img src="{{ asset('uploads/blogs/') }}{{ blog.blogsMedia[0].image }}" title="" alt="">
                             </div>
                             <div class="article-title">
-                                <h6><a href="#">Lifestyle</a></h6>
+                                <h6><a href="#">{{ blog.tags }}</a></h6>
                                 <h2 class="text-secondary">{{ blog.name }}</h2>
+                                {% if blog.author %}
                                 <div class="media">
                                     <div class="avatar">
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" title="" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <label>Rachel Roth</label>
+                                        <label>{{ blog.author }}</label>
                                         <span>{{ blog.createdAt | date('jS M, y') }}</span>
                                     </div>
                                 </div>
+                                {% endif %}
                             </div>
                             <div class="article-content">
                                 <div>{{ blog.description | raw }}</div>
@@ -58,7 +60,7 @@
                                             </div>
                                             <div class="lpa-meta">
                                                 <a class="name" href="#">
-                                                    Rachel Roth
+                                                   {{ randomBlog.author }}
                                                 </a>
                                                 <a class="date" href="#">
                                                     {{ randomBlog.createdAt | date('jS M, y') }}
@@ -89,7 +91,7 @@
                                         </div>
                                         <div class="lpa-meta">
                                             <a class="name" href="#">
-                                                Rachel Roth
+                                                {{ randomBlog.author }}
                                             </a>
                                             <a class="date" href="#">
                                                 {{ randomBlog.createdAt | date('jS M, y') }}

@@ -26,6 +26,8 @@ class BlogsCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextEditorField::new('description')->onlyOnForms(),
+            TextField::new('tags')->onlyOnForms(),
+            TextField::new('author')->onlyOnForms(),
             CollectionField::new('blogsMedia')->setEntryType(BlogsImageType::class)
                 ->setFormTypeOptions(['by_reference' => false])
                 ->onlyOnForms(),

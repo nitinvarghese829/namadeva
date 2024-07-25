@@ -46,6 +46,12 @@ class Blogs
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $metaDescription = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $tags = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $author = null;
+
     public function __construct()
     {
         $this->blogsMedia = new ArrayCollection();
@@ -167,6 +173,30 @@ class Blogs
     public function setMetaDescription(?string $metaDescription): static
     {
         $this->metaDescription = $metaDescription;
+
+        return $this;
+    }
+
+    public function getTags(): ?string
+    {
+        return $this->tags;
+    }
+
+    public function setTags(?string $tags): static
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?string $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }
