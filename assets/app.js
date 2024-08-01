@@ -25,6 +25,23 @@ import 'swiper/css/pagination';
 
 import {CountUp} from "countup.js"
 $(document).ready(function() {
+    $(window).scroll(function() {
+        $('.content').each(function() {
+            var contentTop = $(this).offset().top;
+            var contentBottom = contentTop + $(this).outerHeight();
+            var windowTop = $(window).scrollTop();
+            var windowBottom = windowTop + $(window).height();
+
+            if (windowBottom > contentTop && windowTop < contentBottom) {
+                $(this).addClass('visible');
+            } else {
+                $(this).removeClass('visible');
+            }
+        });
+    });
+
+    // Trigger scroll event on page load to check visibility
+    $(window).scroll();
     var swiper = new Swiper(".mySwiper", {
         modules: [Autoplay],
         slidesPerView: 4,
@@ -88,6 +105,7 @@ $(document).ready(function() {
     const happyClients = new CountUp('happyClients', 150, options); // replace 200 with the actual number
     const successfulProjects = new CountUp('successfulProjects', 300, options); // replace 300 with the actual number
     const kilosOfSteel = new CountUp('kilosOfSteel', 400, options); // replace 400 with the actual number
+    const monthlySale = new CountUp('monthlySale', 400, options); // replace 400 with the actual number
 
     // Start animations when the section is in view
     // $(window).on('scroll', function() {
@@ -102,6 +120,7 @@ $(document).ready(function() {
             happyClients.start();
             successfulProjects.start();
             kilosOfSteel.start();
+            monthlySale.start();
 
             // Unbind the scroll event after animation starts
         //     $(window).off('scroll');

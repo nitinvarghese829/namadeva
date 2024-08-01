@@ -27,6 +27,9 @@ class ProductCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextEditorField::new('description')->onlyOnForms(),
+            TextEditorField::new('keyFeatures')->onlyOnForms(),
+            TextEditorField::new('applications')->onlyOnForms(),
+            TextEditorField::new('whyChooseus')->onlyOnForms(),
             MoneyField::new('amount')->setCurrency('INR'),
             AssociationField::new('category'),
             BooleanField::new('isTrending'),
@@ -40,12 +43,14 @@ class ProductCrudController extends AbstractCrudController
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $this->attachFiles($entityInstance);
+        $entityInstance->setSlug($this->generateSlug($entityInstance->getName()));
         parent::updateEntity($entityManager, $entityInstance);
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $this->attachFiles($entityInstance);
+        $entityInstance->setSlug($this->generateSlug($entityInstance->getName()));
         parent::persistEntity($entityManager, $entityInstance);
     }
 
@@ -57,5 +62,10 @@ class ProductCrudController extends AbstractCrudController
                 $image->setImage($image->getImageFile()->getClientOriginalName());
             }
         }
+    }
+
+    private function generateSlug(string $name): string
+    {
+        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
     }
 }

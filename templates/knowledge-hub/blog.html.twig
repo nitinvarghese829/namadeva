@@ -37,8 +37,28 @@
                 <div class="row align-items-start">
                     <div class="col-lg-8">
                         <article class="article">
-                            <div class="article-img">
-                                <img src="{{ asset('uploads/blogs/') }}{{ blog.blogsMedia[0].image }}" title="" alt="">
+                            <div id="carouselExampleCaptions" class="carousel slide article-img">
+                                <div class="carousel-indicators">
+                                    {% for blog in blog.blogsMedia %}
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index }}" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    {% endfor %}
+                                </div>
+                                <div class="carousel-inner">
+                                    {% for blog in blog.blogsMedia %}
+                                        <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
+                                            <img src="{{ asset('uploads/blogs/') }}{{ blog.image }}" class="d-block w-100" alt="{{ blog.originalName }}">
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
                             <div class="article-title">
                                 <h6><a href="#">{{ blog.tags }}</a></h6>

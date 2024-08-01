@@ -1,0 +1,12 @@
+# robots.txt for https://namadevasteel.com/
+
+# Allow all robots complete access
+User-agent: *
+Disallow:
+
+# Disallow access to specific directories (if needed)
+# Disallow: /private/
+# Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://namadevasteel.com/sitemap.xml

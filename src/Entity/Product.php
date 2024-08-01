@@ -43,6 +43,18 @@ class Product
     #[ORM\OneToMany(targetEntity: Enquiry::class, mappedBy: 'product')]
     private Collection $enquiries;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $keyFeatures = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $applications = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $whyChooseus = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->productMedia = new ArrayCollection();
@@ -176,6 +188,54 @@ class Product
                 $enquiry->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getKeyFeatures(): ?string
+    {
+        return $this->keyFeatures;
+    }
+
+    public function setKeyFeatures(string $keyFeatures): static
+    {
+        $this->keyFeatures = $keyFeatures;
+
+        return $this;
+    }
+
+    public function getApplications(): ?string
+    {
+        return $this->applications;
+    }
+
+    public function setApplications(string $applications): static
+    {
+        $this->applications = $applications;
+
+        return $this;
+    }
+
+    public function getWhyChooseus(): ?string
+    {
+        return $this->whyChooseus;
+    }
+
+    public function setWhyChooseus(string $whyChooseus): static
+    {
+        $this->whyChooseus = $whyChooseus;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

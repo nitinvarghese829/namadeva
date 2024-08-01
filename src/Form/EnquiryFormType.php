@@ -25,6 +25,7 @@ class EnquiryFormType extends AbstractType
             ->add('product', EntityType::class, [
                 'class' => Product::class,
                 'choice_label' => 'name',
+                'data' => $options['product'], // Set the default product here
             ]);
     }
 
@@ -32,6 +33,7 @@ class EnquiryFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Enquiry::class,
+            'product' => null, // Define the 'product' option
         ]);
     }
 }
