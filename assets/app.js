@@ -46,6 +46,7 @@ $(document).ready(function() {
         modules: [Autoplay],
         slidesPerView: 4,
         spaceBetween: 5,
+        speed: 800,
         loop: true,
         autoplay: {
             delay: 2500,
