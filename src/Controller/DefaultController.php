@@ -22,13 +22,15 @@ use Symfony\Component\Routing\Attribute\Route;
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
-    public function index(ProductRepository $productRepository, PagesRepository $pagesRepository): Response
+    public function index(ProductRepository $productRepository, PagesRepository $pagesRepository, BlogsRepository $blogsRepository): Response
     {
         $page = $pagesRepository->findOneBy(['name' => 'home']);
         $products = $productRepository->findBy(['isTrending' => 1]);
+        $blogs = $blogsRepository->findRandomBlogs(3);
         return $this->render('default/index.html.twig', [
             'products' => $products,
             'page' => $page,
+            'blogs' => $blogs,
         ]);
     }
 

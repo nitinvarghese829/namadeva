@@ -108,6 +108,26 @@
         </div>
     </section>
 
+    <section class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-fluid border-radius-12" src="{{ asset('uploads/application/fabrication-and-engineering-667efaa38ea1a912968755.jpeg') }}" alt="Construction Worker">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="">
+                            <p class="text-secondary fw-bold">WELCOME TO NAMADEVA STEEL</p>
+                            <h1 class="text-primary fw-bold">One stop for all your steel needs</h1>
+                            <p>We're in this business since 2003 and We provide the best steels in the market</p>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="brands py-4">
         <div class="text-center">
@@ -178,38 +198,108 @@
 {#        </div>#}
 {#    </section>#}
 
-    <section class="testimonials py-4 page-title content">
-        <div class="text-center">
-            <h2 class="text-primary">Our Happy Clients</h2>
-            <p class="text-seconday"></p>
-        </div>
-        <div class="container">
-            <div class="swiper testimonial-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="client-testimonials">
-                            <h5 class="text-center text-secondary m-0">"Namadeva's steel products are robust and reliable, perfect for our construction needs."</h5>
-                            <p class="text-end me-5 text-primary">-Nitin</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="client-testimonials">
-                            <h5 class="text-center text-secondary m-0">"The fabrication service from Namadeva was impeccable, delivering exactly what we needed on time."</h5>
-                            <p class="text-end me-5 text-primary">-Jessica</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="client-testimonials">
-                            <h5 class="text-center text-secondary m-0">"We love the vibrant roofing sheets from Namadeva; they've transformed our building's look and durability."</h5>
-                            <p class="text-end me-5 text-primary">-Alen</p>
-                        </div>
-                    </div>
 
+    <section class="testimonials">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 bg-secondary py-5">
+                <div class="d-flex align-items-center justify-content-center h-100">
+                    <div class="w-50">
+                        <p class="text-primary fw-bold ">Read Testimonials</p>
+                        <h1 class="text-tertiary fw-bold">It's always a joy to hear that the work we do has positive reviews</h1>
+                    </div>
                 </div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <div class="col-lg-6 col-md-12 bg-primary py-5">
+                <div class="d-flex align-items-center justify-content-center h-100">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="client-testimonials mt-5">
+                                    <div class="d-flex justify-content-center my-3">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="40" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                                    </div>
+
+                                    <h5 class="text-center text-secondary m-0">"Namadeva steel thay take care of customer needs and providing best quality.<br/>
+                                        They have all industrial materials which is used mostly.<br/>
+                                        And the staff very polite."</h5>
+                                    <p class="text-end me-5 text-tertiary m-0">-Devaraj Raj</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="client-testimonials mt-5">
+                                    <div class="d-flex justify-content-center my-3">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="40" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                                    </div>
+                                    <h5 class="text-center text-secondary m-0">"I deal with them for my structural metal requirements.<br /> Industrial shed and other structural items available here.<br/>
+                                        Good job guys, keep it up."</h5>
+                                    <p class="text-end me-5 text-tertiary m-0">- Chitti Chitti</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="client-testimonials mt-5">
+                                    <div class="d-flex justify-content-center my-3">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" width="40" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                                    </div>
+                                    <h5 class="text-center text-secondary m-0">"I came here through reference, they did a good job with product suggestions, pricing and quality.<br />
+                                        Definitely gonna suggest them to my circle."</h5>
+                                    <p class="text-end me-5 text-tertiary m-0">-Asif Asif</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
 
+
+    <section class="blogs py-4 content">
+        <div class="text-center">
+            <h2 class="text-primary">Our Blogs</h2>
+            <p class="fw-bold text-black-50">Latest Blog Updates</p>
+        </div>
+
+        <div class="container">
+            <div class="d-flex gap-3">
+                {% for blog in blogs %}
+                    <div class=" mt-4 pt-2 blog">
+                        <a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" >
+                            <div class="blog-post rounded border">
+                                <div class="blog-img d-block overflow-hidden position-relative">
+                                    <img src="{{ asset('uploads/blogs') }}/{{ blog.blogsMedia[0].image }}" class="img-fluid rounded-top w-100" alt="">
+                                    <div class="overlay rounded-top bg-dark"></div>
+                                </div>
+                                <div class="content p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted p float-right">{{ blog.createdAt | date('jS M, y') }}</small>
+                                        <small><a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-primary text-decoration-none">{{ blog.tags }}</a></small>
+                                    </div>
+
+                                    <h4 class="mt-2"><a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-dark title text-decoration-none">{{ blog.name }}</a></h4>
+                                    {% if blog.author %}
+                                        <div class="pt-3 mt-3 border-top d-flex gap-2">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="30" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                                            <div class="author mt-2">
+                                                <h6 class="mb-0 text-muted">{{ blog.author }}</h6>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center py-2">
+                <a class="btn bg-body-tertiary text-white btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_knowledge_hub_blogs') }}">View all</a>
+            </div>
+        </div>
     </section>
 
 {#    <section class="brands py-4">#}

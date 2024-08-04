@@ -21,6 +21,7 @@ class BlogsRepository extends ServiceEntityRepository
         $offset = max(0, rand(0, 3));
 
         return $this->createQueryBuilder('b')
+            ->orderBy('b.createdAt', 'DESC')
             ->setMaxResults($limit)
             ->getQuery()
             ->getResult();
