@@ -47,18 +47,22 @@ class Product
     private ?string $keyFeatures = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $applications = null;
-
-    #[ORM\Column(type: Types::TEXT)]
     private ?string $whyChooseus = null;
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    /**
+     * @var Collection<int, Application>
+     */
+    #[ORM\ManyToMany(targetEntity: Application::class, inversedBy: 'products')]
+    private Collection $productApplications;
+
     public function __construct()
     {
         $this->productMedia = new ArrayCollection();
         $this->enquiries = new ArrayCollection();
+        $this->productApplications = new ArrayCollection();
     }
 
     public function __toString()
@@ -236,6 +240,30 @@ class Product
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Application>
+     */
+    public function getProductApplications(): Collection
+    {
+        return $this->productApplications;
+    }
+
+    public function addProductApplication(Application $productApplication): static
+    {
+        if (!$this->productApplications->contains($productApplication)) {
+            $this->productApplications->add($productApplication);
+        }
+
+        return $this;
+    }
+
+    public function removeProductApplication(Application $productApplication): static
+    {
+        $this->productApplications->removeElement($productApplication);
 
         return $this;
     }

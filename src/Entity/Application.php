@@ -24,9 +24,21 @@ class Application
     #[ORM\OneToMany(targetEntity: ApplicationMedia::class, mappedBy: 'application', cascade: ['persist'], orphanRemoval: true)]
     private Collection $applicationMedia;
 
+    /**
+     * @var Collection<int, Product>
+     */
+    #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'productApplications')]
+    private Collection $products;
+
     public function __construct()
     {
         $this->applicationMedia = new ArrayCollection();
+        $this->products = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
@@ -71,6 +83,33 @@ class Application
             if ($applicationMedium->getApplication() === $this) {
                 $applicationMedium->setApplication(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function addProduct(Product $product): static
+    {
+        if (!$this->products->contains($product)) {
+            $this->products->add($product);
+            $product->addProductApplication($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): static
+    {
+        if ($this->products->removeElement($product)) {
+            $product->removeProductApplication($this);
         }
 
         return $this;

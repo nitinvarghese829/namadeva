@@ -33,6 +33,7 @@ class ProductController extends AbstractController
     {
         $product = $productRepository->findOneBy(['slug' => $slug]);
 
+        $products = $productRepository->findBy(['isTrending' => 1]);
         $enquiry = new Enquiry();
         $form = $this->createForm(EnquiryFormType::class, $enquiry,[
             'product' => $product,
@@ -61,7 +62,8 @@ class ProductController extends AbstractController
         }
         return $this->render('product/detail.html.twig', [
             'form' => $form->createView(),
-            'product' => $product
+            'product' => $product,
+            'products' => $products,
         ]);
     }
 }

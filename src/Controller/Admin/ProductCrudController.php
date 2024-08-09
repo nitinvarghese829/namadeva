@@ -28,7 +28,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('name'),
             TextEditorField::new('description')->onlyOnForms(),
             TextEditorField::new('keyFeatures')->onlyOnForms(),
-            TextEditorField::new('applications')->onlyOnForms(),
+            AssociationField::new('productApplications'),
             TextEditorField::new('whyChooseus')->onlyOnForms(),
             MoneyField::new('amount')->setCurrency('INR'),
             AssociationField::new('category'),

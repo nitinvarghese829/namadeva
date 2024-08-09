@@ -179,9 +179,9 @@ section.page-title{
     background: #fef8ea;
 }
 
-section.applications{
+section.applications, div.applications{
     img{
-        max-height: 500px;
+        max-height: 700px;
     }
     .swiper-button-next, .swiper-button-prev{
         color: #424f66 !important;
@@ -733,4 +733,21 @@ section.blog{
         transform: rotate(45deg);
     }
 
+}
+
+.product-detail-wrapper{
+    .key-features{
+        ul{
+            margin: 0;
+        }
+    }
+}
+
+section.how-we-work{
+    .icon{
+        i{
+            width: 40px;
+            height: 40px;
+        }
+    }
 }
