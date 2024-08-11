@@ -306,9 +306,9 @@
         </div>
 
         <div class="container">
-            <div class="d-flex flex-wrap gap-3">
+            <div class="row">
                 {% for blog in blogs %}
-                    <div class=" mt-4 pt-2 blog">
+                    <div class="col-lg-4 col-md-12 mt-4 pt-2 blog">
                         <a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" >
                             <div class="blog-post rounded border">
                                 <div class="blog-img d-block overflow-hidden position-relative">
