@@ -7,8 +7,8 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Product</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('app_homepage') }}" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('app_product_index') }}" class="text-decoration-none">Product</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
                 </ol>
             </nav>
@@ -24,7 +24,7 @@
                         <div class="swiper-wrapper">
                             {% for media in product.productMedia %}
                             <div class="swiper-slide">
-                                <img src="{{ asset('uploads/product/') }}{{ media.image }}" class="img-fluid w-100" alt="{{ media.originalName }}" />
+                                <img src="{{ asset('uploads/product/') }}{{ media.image }}" class="product-img img-fluid w-100" alt="{{ media.originalName }}" />
                             </div>
                             {% endfor %}
                         </div>
