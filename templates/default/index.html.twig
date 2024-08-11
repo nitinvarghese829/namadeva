@@ -306,7 +306,7 @@
         </div>
 
         <div class="container">
-            <div class="d-flex gap-3">
+            <div class="d-flex flex-wrap gap-3">
                 {% for blog in blogs %}
                     <div class=" mt-4 pt-2 blog">
                         <a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" >
