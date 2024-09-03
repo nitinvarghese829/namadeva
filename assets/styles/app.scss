@@ -764,3 +764,171 @@ section.how-we-work{
         }
     }
 }
+
+section.about-us{
+    .hero {
+        background-image: url('../images/about-us-hero.webp');
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .hero-text p {
+        font-size: 1.5rem;
+    }
+
+    /* Introduction Section */
+    .introduction {
+        padding: 50px 0;
+        display: flex;
+        align-items: center;
+        color: #fff;
+    }
+
+
+    /* Company History Section */
+    .history {
+        background-color: #ecf0f1;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .timeline {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .timeline-item {
+        width: 200px;
+        padding: 20px;
+        background-color: #fff;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .timeline-item .year {
+        font-size: 1.5rem;
+        color: #2980b9;
+        margin-bottom: 10px;
+    }
+
+    /* Mission, Vision, Values Section */
+    .mission-vision-values {
+        padding: 50px 0;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .mv-section {
+        width: 30%;
+    }
+
+    .mv-section h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    /* Team Section */
+    .team {
+        background-color: #ecf0f1;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .team-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .team-member {
+        width: 200px;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .team-member img {
+        width: 100%;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .team-member h4 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    .team-member p {
+        color: #7f8c8d;
+    }
+
+    /* Sustainability Section */
+    .sustainability {
+        padding: 50px 0;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .infographics {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    /* Call to Action Section */
+    .cta {
+        background-color: #2980b9;
+        color: #fff;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .cta-button {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background-color: #c0392b;
+    }
+
+    .parallax {
+        /* The image used */
+        background-image: url("../images/steel-images.jpg");
+
+        /* Set a specific height */
+        min-height: 500px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.ckeditor{
+    background: red;
+}
