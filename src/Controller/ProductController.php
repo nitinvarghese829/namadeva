@@ -49,14 +49,8 @@ class ProductController extends AbstractController
             $this->addFlash('success', 'Enquiry submitted successfully!');
 
             $subject = 'New Enquiry from ' . $product->getName();
-            $body = '
-            <p>Name: ' . $form->get('firstname')->getData() . ' ' . $form->get('lastname')->getData() . '</p>
-            <p>Email: ' . $form->get('email')->getData() . '</p>
-            <p>Phone: ' . $form->get('phone')->getData() . '</p>
-            <p>Pincode: ' . $form->get('pincode')->getData() . '</p>
-            <p>Message: ' . $form->get('requirement')->getData() . '</p>
-            <p>Product: '. $form->get('product')->getData()->getName() .'</p>
-            ';
+            $body = 'Phone: ' . $form->get('phone')->getData() . PHP_EOL . 'Product: '. $form->get('product')->getData()->getName();
+
             $emailerService->sendEmail($body, $subject);
             return $this->redirectToRoute('app_product_detail', ['slug' => $product->getSlug()]);
         }
