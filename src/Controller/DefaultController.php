@@ -55,7 +55,7 @@ class DefaultController extends AbstractController
     #[Route('/knowledge-hub/blogs', name: 'app_knowledge_hub_blogs')]
     public function knowledgeHubBlogs(PagesRepository $pagesRepository, BlogsRepository $blogsRepository): Response
     {
-        $blogs = $blogsRepository->findAll();
+        $blogs = $blogsRepository->findBy([], ['createdAt' => 'DESC']);
         $page = $pagesRepository->findOneBy(['name' => 'about us']);
         return $this->render('knowledge-hub/blogs.html.twig', [
             'page' => $page,
