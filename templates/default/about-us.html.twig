@@ -7,24 +7,19 @@
 {% block body %}
     <section class="about-us">
         <section class="hero">
-            <div class="hero-text">
-                <h1>Building a Stronger Tomorrow</h1>
-                <p>Precision Engineering for a Better Future</p>
+            <div class="hero-text shadow border-radius-12 px-5 py-4">
+                <h1 class="text-tertiary content">Building a Stronger Tomorrow</h1>
+                <p class="m-0 text-white content">Precision Engineering for a Better Future</p>
             </div>
         </section>
 
-        <section class="history">
-            <h2>Our History</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="year">1990</span>
-                    <p>Founded with a vision for excellence.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">2000</span>
-                    <p>Expanded globally with new facilities.</p>
-                </div>
-                <!-- Add more timeline items here -->
+        <section class="history bg-secondary">
+            <h2 class="my-5 text-primary fw-semibold">Our History</h2>
+            <div id="lineCont">
+                <div id="line"></div>
+                <div id="span">Date Placeholder</div>
+            </div>
+            <div id="mainCont">
             </div>
         </section>
 
@@ -32,9 +27,9 @@
         <!-- Introduction Section -->
         <section class="introduction parallax">
             <div class="container">
-                <div class="intro-text">
-                    <h2>About Namadeva Steel</h2>
-                    <p>Namadeva Steel is a leading provider of high-quality steel products. Our mission is to deliver innovative and sustainable solutions that meet the evolving needs of our customers worldwide.</p>
+                <div class="intro-text bg-primary border-radius-8 shadow p-5">
+                    <h2 class="text-secondary fw-bold content">About Namadeva Steel</h2>
+                    <p class="text-white m-0 content">Namadeva Steel is a leading provider of high-quality steel products. Our mission is to deliver innovative and sustainable solutions that meet the evolving needs of our customers worldwide.</p>
                 </div>
             </div>
         </section>
@@ -43,50 +38,67 @@
 
 
         <!-- Mission, Vision, Values Section -->
-        <section class="mission-vision-values">
-            <div class="container d-flex justify-content-between gap-3">
-                <div class="mv-section">
-                    <i class="icon-mission"></i>
-                    <h3>Our Mission</h3>
-                    <p>Delivering high-quality steel products with integrity and innovation.</p>
+        <section class="mission-vision-values bg-secondary">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-between">
+                    <div class="p-3 content">
+                        <h2 class="text-primary my-2">Our Mission</h2>
+                        <i class="fas fa-bullseye fa-2x text-primary mb-2"></i>
+                        <p class="text-tertiary w-250 m-auto fw-bold">Delivering high-quality steel products with integrity and innovation.</p>
+                    </div>
+
+                    <div class="p-3 content">
+                        <h2 class="text-primary my-2">Our Vision</h2>
+                        <i class="fas fa-bullseye fa-2x text-primary mb-2"></i>
+                        <p class="text-tertiary w-250 m-auto  fw-bold">To be the world leader in sustainable steel solutions.</p>
+                    </div>
+
+                    <div class="p-3 content">
+                        <h2 class="text-primary my-2">Our Values</h2>
+                        <i class="fas fa-heart fa-2x text-primary mb-2"></i>
+                        <p class="text-tertiary w-250 m-auto fw-bold">Commitment, Excellence, and Innovation.</p>
+                    </div>
                 </div>
-                <div class="mv-section">
-                    <i class="icon-vision"></i>
-                    <h3>Our Vision</h3>
-                    <p>To be the world leader in sustainable steel solutions.</p>
-                </div>
-                <div class="mv-section">
-                    <i class="icon-values"></i>
-                    <h3>Our Values</h3>
-                    <p>Commitment, Excellence, and Innovation.</p>
-                </div>
+
             </div>
         </section>
 
         <!-- Team Section -->
-        <section class="team">
-            <h2>Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-{#                    <img src="team-member1.jpg" alt="Team Member 1">#}
-                    <h4>John Doe</h4>
-                    <p>CEO</p>
+        <section class="team bg-white">
+            <h2 class="text-primary fw-bold my-3">Meet Our Team</h2>
+            <div class="d-lg-flex gap-3 container d-block">
+                <div class="director text-center shadow p-3">
+                    <h3 class="text-secondary my-2">Bajarang Lal Didwania</h3>
+                    <h5 class="text-primary">Founder & Chairman</h5>
+                    <p class="text-black-50">Bajarang Lal Didwania, the visionary behind Namadeva, brings decades of industry experience and unwavering dedication. His leadership has been the cornerstone of our company's success and growth. Under his guidance, Namadeva has evolved into a trusted name in the steel industry, known for its commitment to quality and innovation. His passion for excellence and his forward-thinking approach continue to inspire the entire team.</p>
                 </div>
-                <div class="team-member">
-{#                    <img src="team-member2.jpg" alt="Team Member 2">#}
-                    <h4>Jane Smith</h4>
-                    <p>CTO</p>
+                <div class="director text-center shadow p-3">
+                    <h3 class="text-secondary w-200 my-2">Anirudh Didwania</h3>
+                    <h5 class="text-primary">Head of Purchase and Sales</h5>
+                    <p class="text-black-50">Anirudh Didwania expertly manages our purchase and sales operations, ensuring that every client receives top-quality materials. His strategic insight and commitment to excellence drive our operational success. With a keen eye for market trends and a strong network of suppliers, Anirudh ensures that Namadeva consistently meets and exceeds customer expectations. His dedication to maintaining the highest standards of service is a key pillar of our business.</p>
+                </div>
+                <div class="director text-center shadow p-3">
+                    <h3 class="text-secondary w-200 my-2">Nakul Didwania</h3>
+                    <h5 class="text-primary">Director of Marketing & Sales</h5>
+                    <p class="text-black-50">Nakul Didwania leads our marketing and sales initiatives, focusing on expanding Namadeva's reach and enhancing our brand. His innovative strategies and customer-first approach propel our growth and market presence. Nakul's expertise in market analysis and his creative vision have been instrumental in positioning Namadeva as a leader in the steel industry. His commitment to building strong client relationships and driving sales growth is unmatched.</p>
+                </div>
+                <div class="director text-center shadow p-3">
+                    <h3 class="text-secondary w-200 my-2">Rahul Didwania</h3>
+                    <h5 class="text-primary">Business Development</h5>
+                    <p class="text-black-50">Rahul Didwania drives our business development efforts, identifying new opportunities and fostering valuable partnerships. His dynamic approach and industry acumen play a vital role in our continuous expansion and success. Rahul's proactive mindset and strategic planning skills enable Namadeva to explore new markets and develop innovative solutions. His focus on long-term growth and sustainability ensures that Namadeva remains at the forefront of the industry.</p>
                 </div>
                 <!-- Add more team members here -->
             </div>
         </section>
 
+        <hr />
+
         <!-- Sustainability & Innovation Section -->
         <section class="sustainability">
             <div class="container">
                 <div class="sustainability-content">
-                    <h2>Sustainability & Innovation</h2>
-                    <p>We are committed to sustainable practices and continuous innovation to meet the challenges of the future.</p>
+                    <h2 class="text-secondary fw-bold">Sustainability & Innovation</h2>
+                    <p class="text-primary">We are committed to sustainable practices and continuous innovation to meet the challenges of the future.</p>
                     <div class="infographics">
                         <!-- Add infographic icons and text here -->
                     </div>
@@ -95,10 +107,10 @@
         </section>
 
         <!-- Call to Action Section -->
-        <section class="cta">
-            <h2>Get in Touch</h2>
-            <p>Contact us to learn more about our products and services.</p>
-            <a href="contact.html" class="cta-button bg-primary">Contact Us</a>
+        <section class="cta bg-primary">
+            <h2 class="text-secondary fw-bold">Get in Touch</h2>
+            <p class="text-white mb-4">Contact us to learn more about our products and services.</p>
+            <a href="{{ path('app_contact_us') }}" class="cta-button bg-secondary">Contact Us</a>
         </section>
     </section>
 
@@ -158,3 +170,4 @@
 {#    </section>#}
 
 {% endblock %}
+

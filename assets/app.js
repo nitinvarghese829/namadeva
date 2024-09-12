@@ -23,8 +23,179 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import {CountUp} from "countup.js"
+import {CountUp} from "countup.js";
+
+//
+// import tinymce from "../public/bundles/tinymce/ext/tinymce/tinymce";
+// import "../public/bundles/tinymce/ext/tinymce/models/dom/model";
+// import "../public/bundles/tinymce/ext/tinymce/skins/ui/oxide/skin.css";
+// import "../public/bundles/tinymce/ext/tinymce/skins/ui/oxide/skin.min.css";
+// import "../public/bundles/tinymce/ext/tinymce/skins/content/default/content.css";
+// import "../public/bundles/tinymce/ext/tinymce/skins/content/default/content.min.css";
+// import "../public/bundles/tinymce/ext/tinymce/skins/ui/oxide/content.css";
+// import "../public/bundles/tinymce/ext/tinymce/themes/silver/theme";
+// import "../public/bundles/tinymce/ext/tinymce/icons/default/icons";
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+            }
+        })
+    });
+    const arr = document.querySelectorAll('.lazy_img');
+    arr.forEach((v) => {
+        imageObserver.observe(v);
+    })
+})
+
 $(document).ready(function() {
+    // tinymce.init({
+    //     selector: 'textarea'
+    // })
+
+    //Sample dates
+    var dates = ["6/12/1995", "2/15/1996", "10/22/2000", "5/5/2005", "8/15/2010", "11/2/2018", "12/22/2019", "3/10/2022", "6/1/2024"];
+//For the purpose of stringifying MM/DD/YYYY date format
+    var monthSpan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+//Format MM/DD/YYYY into string
+    function dateSpan(date) {
+        console.log(date);
+        var month = date.split('/')[0];
+        month = monthSpan[month - 1];
+        var day = date.split('/')[1];
+        if (day.charAt(0) == '0') {
+            day = day.charAt(1);
+        }
+        var year = date.split('/')[2];
+
+        //Spit it out!
+        return month + " " + day + ", " + year;
+    }
+    function dateDescSpan(date) {
+        console.log(date);
+        switch (date) {
+            case '6/12/1995':
+                return '<h2 class="text-tertiary fw-bold mt-3">Company Formation</h2><p class="text-primary font-16">On this day, we officially founded our company with a vision to lead the industry.</p>';
+            case '2/15/1996':
+                return '<h2 class="text-tertiary fw-bold mt-3">First Major Order</h2><p class="text-primary font-16">We successfully secured our first major contract, marking a key milestone in our growth.</p>';
+            case '10/22/2000':
+                return '<h2 class="text-tertiary fw-bold mt-3">First Industry Award</h2><p class="text-primary font-16">We received our first award for excellence in quality and service, solidifying our reputation in the industry.</p>';
+            case '5/5/2005':
+                return '<h2 class="text-tertiary fw-bold mt-3">Global Expansion</h2><p class="text-primary font-16">We opened our first international office, marking the beginning of our global expansion efforts.</p>';
+            case '8/15/2010':
+                return '<h2 class="text-tertiary fw-bold mt-3">Innovation Award</h2><p class="text-primary font-16">We were recognized for our innovative approach in product development and operational efficiency.</p>';
+            case '11/2/2018':
+                return '<h2 class="text-tertiary fw-bold mt-3">Sustainability Initiative</h2><p class="text-primary font-16">Launched our company-wide sustainability initiative to reduce our environmental footprint.</p>';
+            case '12/22/2019':
+                return '<h2 class="text-tertiary fw-bold mt-3">Record-breaking Revenue</h2><p class="text-primary font-16">Achieved record-breaking revenue, thanks to our continuous innovation and customer satisfaction.</p>';
+            case '3/10/2022':
+                return '<h2 class="text-tertiary fw-bold mt-3">New Headquarters</h2><p class="text-primary font-16">Moved into our state-of-the-art headquarters, designed to foster collaboration and innovation.</p>';
+            case '6/1/2024':
+                return '<h2 class="text-tertiary fw-bold mt-3">30th Anniversary Celebration</h2><p class="text-primary font-16">Celebrated 30 years of growth, innovation, and customer satisfaction.</p>';
+
+        }
+
+    }
+
+//Main function. Draw your circles.
+    function makeCircles() {
+        //Forget the timeline if there's only one date. Who needs it!?
+        if (dates.length < 2) {
+            $("#line").hide();
+            $("#span").show().text(dateSpan(dates[0]));
+            //This is what you really want.
+        } else if (dates.length >= 2) {
+            //Set day, month and year variables for the math
+            var first = dates[0];
+            var last = dates[dates.length - 1];
+
+            // Convert first and last dates to Date objects
+            var firstDate = new Date(first.split('/')[2], first.split('/')[0] - 1, first.split('/')[1]);
+            var lastDate = new Date(last.split('/')[2], last.split('/')[0] - 1, last.split('/')[1]);
+
+            // Calculate the total number of days between the first and last dates
+            var totalDays = Math.floor((lastDate - firstDate) / (1000 * 60 * 60 * 24));
+
+            // Draw the first date circle
+            $("#line").append(`
+                <div class="circle" id="circle0" style="left: 0%;">
+                    <div class="popupSpan text-white fw-semibold">${dateSpan(dates[0])}</div>
+                </div>
+            `);
+            $("#mainCont").append(`<span id="span0" class="center">${dateDescSpan(dates[0])}</span>`);
+
+            // Loop through middle dates
+            for (var i = 1; i < dates.length - 1; i++) {
+                var currentDate = new Date(dates[i].split('/')[2], dates[i].split('/')[0] - 1, dates[i].split('/')[1]);
+                var daysSinceFirst = Math.floor((currentDate - firstDate) / (1000 * 60 * 60 * 24));
+                var relativePosition = (daysSinceFirst / totalDays) * 100;
+
+                // Draw the date circle for each middle date
+                $("#line").append(`
+                    <div class="circle" id="circle${i}" style="left: ${relativePosition}%;">
+                        <div class="popupSpan text-white fw-semibold">${dateSpan(dates[i])}</div>
+                    </div>
+                `);
+                $("#mainCont").append(`<span id="span${i}" class="right">${dateDescSpan(dates[i])}</span>`);
+            }
+
+            // Draw the last date circle
+            $("#line").append(`
+                <div class="circle" id="circle${i}" style="left: 99%;">
+                    <div class="popupSpan text-white fw-semibold">${dateSpan(dates[dates.length - 1])}</div>
+                </div>
+            `);
+            $("#mainCont").append(`<span id="span${i}" class="right">${dateDescSpan(dates[dates.length - 1])}</span>`);
+
+        }
+
+        $(".circle:first").addClass("active");
+    }
+
+    makeCircles();
+
+    $(".circle").mouseenter(function() {
+        $(this).addClass("hover");
+    });
+
+    $(".circle").mouseleave(function() {
+        $(this).removeClass("hover");
+    });
+
+    $(".circle").click(function() {
+        var spanNum = $(this).attr("id");
+        selectDate(spanNum);
+    });
+
+    function selectDate(selector) {
+        let $selector;
+        $selector = "#" + selector;
+        let $spanSelector;
+        $spanSelector = $selector.replace("circle", "span");
+        var current = $selector.replace("circle", "");
+
+        $(".active").removeClass("active");
+        $($selector).addClass("active");
+
+        if ($($spanSelector).hasClass("right")) {
+            $(".center").removeClass("center").addClass("left")
+            $($spanSelector).addClass("center");
+            $($spanSelector).removeClass("right")
+        } else if ($($spanSelector).hasClass("left")) {
+            $(".center").removeClass("center").addClass("right");
+            $($spanSelector).addClass("center");
+            $($spanSelector).removeClass("left");
+        };
+    };
+
+    console.log()
+
+    console.log('app');
     $(window).scroll(function() {
         $('.content').each(function() {
             var contentTop = $(this).offset().top;

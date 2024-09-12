@@ -4,12 +4,12 @@ namespace App\Form;
 
 use App\Entity\Enquiry;
 use App\Entity\Product;
+use Eckinox\TinymceBundle\Form\Type\TinymceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class EnquiryFormType extends AbstractType
 {

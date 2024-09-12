@@ -46,7 +46,7 @@
                                 <div class="carousel-inner">
                                     {% for blog in blog.blogsMedia %}
                                         <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
-                                            <img src="{{ asset('uploads/blogs/') }}{{ blog.image }}" class="d-block w-100" alt="{{ blog.originalName }}">
+                                            <img data-src="{{ asset('uploads/blogs/') }}{{ blog.image }}" class="d-block w-100 lazy_img" alt="{{ blog.originalName }}">
                                         </div>
                                     {% endfor %}
 
@@ -66,7 +66,7 @@
                                 {% if blog.author %}
                                 <div class="media">
                                     <div class="avatar">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" title="" alt="">
+                                        <img data-src=="https://bootdey.com/img/Content/avatar/avatar1.png" class="lazy_img" title="" alt="">
                                     </div>
                                     <div class="media-body">
                                         <label>{{ blog.author }}</label>
@@ -77,6 +77,15 @@
                             </div>
                             <div class="article-content">
                                 <div>{{ blog.description | raw }}</div>
+                                {% for data in blog.blogPosts %}
+                                    <div class="container">
+                                        {% for b in data.blogPostMedia %}
+                                            <img data-src="{{ asset('uploads/blogs/') }}{{ b.image }}" class="d-block w-100 mb-3 lazy_img" alt="{{ b.originalName }}">
+                                        {% endfor %}
+                                    </div>
+
+                                    <div>{{ data.description | raw }}</div>
+                                {% endfor %}
                             </div>
                         </article>
 
@@ -106,7 +115,7 @@
                                         </div>
                                         <div class="lpa-right">
                                             <a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : randomBlog.slug}) }}">
-                                                <img src="{{ asset('uploads/blogs/') }}{{ randomBlog.blogsMedia[0].image }}" title="" alt="">
+                                                <img data-src="{{ asset('uploads/blogs/') }}{{ randomBlog.blogsMedia[0].image }}" class="lazy_img" title="" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -137,7 +146,7 @@
                                     </div>
                                     <div class="lpa-right">
                                         <a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : randomBlog.slug}) }}">
-                                            <img src="{{ asset('uploads/blogs/') }}{{ randomBlog.blogsMedia[0].image }}" title="" alt="">
+                                            <img data-src="{{ asset('uploads/blogs/') }}{{ randomBlog.blogsMedia[0].image }}" class="lazy_img" title="" alt="">
                                         </a>
                                     </div>
                                 </div>

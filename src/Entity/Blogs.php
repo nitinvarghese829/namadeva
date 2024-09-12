@@ -52,9 +52,16 @@ class Blogs
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $author = null;
 
+    /**
+     * @var Collection<int, BlogPost>
+     */
+    #[ORM\OneToMany(targetEntity: BlogPost::class, mappedBy: 'blogs')]
+    private Collection $blogPosts;
+
     public function __construct()
     {
         $this->blogsMedia = new ArrayCollection();
+        $this->blogPosts = new ArrayCollection();
     }
 
 
@@ -197,6 +204,36 @@ class Blogs
     public function setAuthor(?string $author): static
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, BlogPost>
+     */
+    public function getBlogPosts(): Collection
+    {
+        return $this->blogPosts;
+    }
+
+    public function addBlogPost(BlogPost $blogPost): static
+    {
+        if (!$this->blogPosts->contains($blogPost)) {
+            $this->blogPosts->add($blogPost);
+            $blogPost->setBlogs($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBlogPost(BlogPost $blogPost): static
+    {
+        if ($this->blogPosts->removeElement($blogPost)) {
+            // set the owning side to null (unless already changed)
+            if ($blogPost->getBlogs() === $this) {
+                $blogPost->setBlogs(null);
+            }
+        }
 
         return $this;
     }

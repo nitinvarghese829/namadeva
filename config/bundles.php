@@ -16,4 +16,5 @@ return [
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
+    Eckinox\TinymceBundle\TinymceBundle::class => ['all' => true],
 ];

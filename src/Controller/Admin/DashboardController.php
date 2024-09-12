@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Admin;
 use App\Entity\Application;
+use App\Entity\BlogPost;
 use App\Entity\Blogs;
 use App\Entity\Enquiry;
 use App\Entity\Pages;
@@ -63,6 +64,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Application', 'fa-cart-shopping', Application::class),
             MenuItem::subMenu('Knowledge Hub', 'fa fa-tags')->setSubItems([
                 MenuItem::linkToCrud('Blogs', 'fa-blogs', Blogs::class),
+                MenuItem::linkToCrud('Blog Post', 'fa-blogs', BlogPost::class),
             ]),
             MenuItem::linkToCrud('Enquiry', 'fa-cart-shopping', Enquiry::class),
             MenuItem::linkToCrud('Pages', 'fa-cart-shopping', Pages::class),
