@@ -76,6 +76,50 @@ section.brands img{
 }
 
 section.products{
+    .card {
+        flex: 1;
+        height: 100%;
+        transition: all 400ms;
+        cursor: pointer;
+    }
+    .card > img {
+        display: block;
+        max-width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .card:nth-child(odd) {
+        translate: 0 -20px;
+    }
+    .card:nth-child(even) {
+        translate: 0 20px;
+    }
+
+    .container:hover .card:not(:hover) {
+        filter: opacity(30%);
+    }
+    .card{
+        .product-name{
+            opacity: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            h4{
+                background: rgba(201, 174, 126, 0.83);
+            }
+        }
+    }
+
+    .card:hover {
+        flex: 3;
+        .product-name{
+            opacity: 1;
+        }
+    }
+
     .image-container {
         position: relative;
         width: 100%;

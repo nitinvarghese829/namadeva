@@ -198,10 +198,22 @@
     <section class="products py-4 content">
         <div class="text-center">
             <h2 class="text-primary">Our Products</h2>
-            <p>Durable structural solutions that ensure reliability and quality for every project</p>
+            <p class="fw-bold text-secondary">Durable structural solutions that ensure reliability and quality for every project</p>
         </div>
 
-        <div class="container">
+        <div class="container d-none d-md-block my-5">
+            <div class="d-flex gap-2 justify-content-center align-items-center">
+                {% for product in products %}
+                    <a itemscope itemtype="https://schema.org/Product" class="card rounded-4 border-0 shadow overflow-hidden" href="{{ path('app_product_detail', {'slug': product.slug}) }}">
+                        <img itemprop="image" src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}" />
+                        <div class="position-absolute product-name content">
+                            <h4 itemprop="name" class="p-3 shadow rounded-2 fw-bold text-white">{{ product.name }}</h4>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container d-block d-md-none">
             <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
                 {% for product in products %}
                     <a href="{{ path('app_product_detail', {'slug': product.slug}) }}">
