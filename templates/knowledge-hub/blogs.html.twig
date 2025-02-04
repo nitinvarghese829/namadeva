@@ -19,7 +19,6 @@
         <div class="container">
             <div class="row">
                 {% for blog in blogs %}
-               aaa {{ dump(blog) }}
                 <div class="col-lg-4 col-md-6 mt-4 pt-2 blog">
                     <a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" >
                         <div class="blog-post rounded border">
@@ -34,7 +33,7 @@
                                 </div>
 
                                 <h4 class="mt-2"><a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-dark title text-decoration-none">{{ blog.name }}</a></h4>
-                                <div class="text-muted mt-2 description">{{ blog.description | raw }}</div>
+                                {# <div class="text-muted mt-2 description">{{ blog.description | raw }}</div> #}
                                 {% if blog.author %}
                                 <div class="pt-3 mt-3 border-top d-flex gap-2">
                                     <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
