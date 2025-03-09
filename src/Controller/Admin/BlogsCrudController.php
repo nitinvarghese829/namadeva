@@ -15,6 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class BlogsCrudController extends AbstractCrudController
@@ -29,7 +30,18 @@ class BlogsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            TextEditorField::new('description')->onlyOnForms(),
+            TextEditorField::new('description', 'Content')
+                ->setFormType(CKEditorType::class)
+                ->setFormTypeOptions([
+                'config' => [
+                    'toolbar' => [
+                        ['name' => 'basicstyles', 'items' => ['Bold', 'Italic', 'Underline']],
+                        ['name' => 'paragraph', 'items' => ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent']],
+                        ['name' => 'insert', 'items' => ['Table', 'HorizontalRule']],
+                    ],
+                    'extraPlugins' => 'table',
+                ],
+            ]),
             AssociationField::new('blogPosts'),
             TextField::new('tags')->onlyOnForms(),
             TextField::new('author')->onlyOnForms(),

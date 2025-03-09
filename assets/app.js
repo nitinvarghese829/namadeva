@@ -53,6 +53,25 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 $(document).ready(function() {
+    $('.hover-card').hover(
+        function () {
+            // On hover in: Show the content with a smooth fade-in effect
+            $(this).find('.hover-content')
+                .removeClass('d-none')
+                .css({
+                    opacity: 0, // Start transparent
+                    transition: 'opacity 0.3s ease' // Smooth transition
+                })
+                .animate({ opacity: 1 }, 300); // Fade in
+        },
+        function () {
+            // On hover out: Hide the content with a smooth fade-out effect
+            $(this).find('.hover-content')
+                .animate({ opacity: 0 }, 300, function () {
+                    $(this).addClass('d-none'); // Hide after animation
+                });
+        }
+    );
     // tinymce.init({
     //     selector: 'textarea'
     // })

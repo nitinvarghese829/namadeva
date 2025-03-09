@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Enquiry;
 use App\Form\EnquiryFormType;
+use App\Form\ProductEnquiryFormType;
 use App\Repository\ProductCategoryRepository;
 use App\Repository\ProductRepository;
 use App\Service\EmailerService;
@@ -33,9 +34,22 @@ class ProductController extends AbstractController
     {
         $product = $productRepository->findOneBy(['slug' => $slug]);
 
+        $keyFeatures = $product->getKeyFeatures();
+        preg_match_all('/<li>(.*?)<\/li>/', $keyFeatures, $matches);
+
+        // Initialize the features array
+        $featuresArray = [];
+
+        // Loop through the matches and clean up the text
+        foreach ($matches[1] as $item) {
+            $featuresArray[] = strip_tags(trim($item)); // Remove HTML tags and trim whitespace
+        }
+
+
+//        dd($product);
         $products = $productRepository->findBy(['isTrending' => 1]);
         $enquiry = new Enquiry();
-        $form = $this->createForm(EnquiryFormType::class, $enquiry,[
+        $form = $this->createForm(ProductEnquiryFormType::class, $enquiry,[
             'product' => $product,
         ]);
 
@@ -46,7 +60,7 @@ class ProductController extends AbstractController
             $entityManager->persist($enquiry);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Enquiry submitted successfully!');
+            $this->addFlash('success', 'Enquiry submitted successfully! Our team is curating the best deal for you!');
 
             $subject = 'New Enquiry from ' . $product->getName();
             $body = 'Phone: ' . $form->get('phone')->getData() . PHP_EOL . 'Product: '. $form->get('product')->getData()->getName();
@@ -58,6 +72,7 @@ class ProductController extends AbstractController
             'form' => $form->createView(),
             'product' => $product,
             'products' => $products,
+            'featuresArray' => $featuresArray,
         ]);
     }
 }

@@ -1,42 +1,42 @@
 vich_uploader:
-    db_driver: orm
+  db_driver: orm
 
-    mappings:
-        thumbnails:
-            uri_prefix: /images/thumbnails
-            upload_destination: '%kernel.project_dir%/public/images/thumbnails'
+  mappings:
+    thumbnails:
+      uri_prefix: /images/thumbnails
+      upload_destination: "%kernel.project_dir%/public/images/thumbnails"
 
-        productMedia:
-            uri_prefix: /uploads/product
-            upload_destination: '%kernel.project_dir%/public/uploads/product'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    productMedia:
+      uri_prefix: /uploads/product
+      upload_destination: "%kernel.project_dir%/public/uploads/product"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-        servicesMedia:
-            uri_prefix: /uploads/services
-            upload_destination: '%kernel.project_dir%/public/uploads/services'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    productVariantMedia:
+      uri_prefix: /uploads/product
+      upload_destination: "%kernel.project_dir%/public/uploads/product"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-        applicationMedia:
-            uri_prefix: /uploads/application
-            upload_destination: '%kernel.project_dir%/public/uploads/application'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    servicesMedia:
+      uri_prefix: /uploads/services
+      upload_destination: "%kernel.project_dir%/public/uploads/services"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-        blogPostMedia:
-            uri_prefix: /uploads/blogs
-            upload_destination: '%kernel.project_dir%/public/uploads/blogs'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    applicationMedia:
+      uri_prefix: /uploads/application
+      upload_destination: "%kernel.project_dir%/public/uploads/application"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-        blogsMedia:
-            uri_prefix: /uploads/blogs
-            upload_destination: '%kernel.project_dir%/public/uploads/blogs'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    blogPostMedia:
+      uri_prefix: /uploads/blogs
+      upload_destination: "%kernel.project_dir%/public/uploads/blogs"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
+    blogsMedia:
+      uri_prefix: /uploads/blogs
+      upload_destination: "%kernel.project_dir%/public/uploads/blogs"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
-        your_image_mapping:
-            uri_prefix: /uploads/category
-            upload_destination: '%kernel.project_dir%/public/uploads/category'
-            namer: Vich\UploaderBundle\Naming\OrignameNamer
-
-
-
-
+    your_image_mapping:
+      uri_prefix: /uploads/category
+      upload_destination: "%kernel.project_dir%/public/uploads/category"
+      namer: Vich\UploaderBundle\Naming\OrignameNamer

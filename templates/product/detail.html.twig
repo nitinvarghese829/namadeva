@@ -1,335 +1,529 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Our Products - Namadeva Steels{% endblock %}
+{% block title %}Our Products - Namdev Infratech
+{% endblock %}
 
 {% block body %}
-    <section class="page-title py-4">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="{{ path('app_homepage') }}" class="text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ path('app_product_index') }}" class="text-decoration-none">Product</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
+
+	{% set flash_messages = app.flashes %}
 
 
-    <section class="product-detail-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="content col-lg-6 col-md-12 p-0">
-                    <div class="swiper testimonial-swiper">
-                        <div class="swiper-wrapper">
-                            {% for media in product.productMedia %}
-                            <div class="swiper-slide">
-                                <img src="{{ asset('uploads/product/') }}{{ media.image }}" class="product-img img-fluid w-100" alt="{{ media.originalName }}" />
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-                <div class="content col-lg-6 col-md-12">
-                    <div class="key-features h-100 m-auto">
-                        <div class="d-flex justify-content-center flex-column h-100 p-5 p-lg-0">
-                            <div class="animate__animated  animate__fadeInDown">
-                                <h2 class="text-primary mb-3">{{ product.name }}</h2>
-                            </div>
-                            <div class="animate__animated  animate__fadeInDown">
-                                <p class="text-secondary">{{ product.description | raw }}</p>
-                            </div>
-                        </div>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					{{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}#}
 
-                    </div>
-                </div>
-            </div>
-        </div>
+					<div class="row">
 
-        <ul class="nav nav-pills my-3 justify-content-center" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Key features</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Product Details</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Applications</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                <div class="text-center bg-secondary py-3">
-                    <h2 class="text-primary m-0 animate__animated  animate__fadeInDown">Key Features of {{ product.name  }}</h2>
-                </div>
-                <div class="product-detail container">
-                    <div class="d-flex justify-content-center flex-column h-100 p-3 p-lg-5">
-                        <h3 class="text-secondary">Key features</h3>
-                        <div>
-                            {{ product.keyFeatures | raw }}
-                        </div>
-                    </div>
+						<div class="col-md-6 col-sm-12">
+							<div class="mb-3">
+								<label for="phone" class="form-label text-black">{{ form_label(form.phone) }}</label>
+								{{ form_widget(form.phone, {'attr': {'class': 'form-control', 'id': 'phone', 'required': true}}) }}
+								{{ form_errors(form.phone) }}
+							</div>
+						</div>
 
-                </div>
-            </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                <div class="text-center bg-secondary py-3">
-                    <h2 class="text-primary m-0 animate__animated  animate__fadeInDown">Product Details</h2>
-                </div>
-                <div class="container">
-                    <h3>Product Detail</h3>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                <div class="applications mt-3">
-                    <div class="text-center bg-secondary py-3">
-                        <h2 class="text-primary m-0 animate__animated  animate__fadeInDown">Applications of {{ product.name  }} in real world</h2>
-                    </div>
+						<div class="col-md-6 col-sm-12">
+							<div class="mb-3">
+								<label for="product" class="form-label text-black">{{ form_label(form.product) }}</label>
+								{{ form_widget(form.product, {'attr': {'class': 'form-control', 'id': 'product', 'required': true}}) }}
+								{{ form_errors(form.product) }}
+							</div>
+						</div>
 
-                    <div class="swiper application-swipper">
-                        <div class="swiper-wrapper">
-                            {% for application in product.productApplications %}
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('uploads/application') }}/{{ application.applicationMedia[0].image }}" alt="{{ application.applicationMedia[0].image }}" />
-                                    <h3 class="app-name text-primary p-3 animate__animated  animate__fadeInDown">{{ application.name }}</h3>
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                        <div class="autoplay-progress">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="20"></circle>
-                            </svg>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+					</div>
 
-    </section>
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
 
-    <section class="infographic-wrapper bg-secondary">
-        <div class="container">
-            <div class="infographic text-center p-4">
-                <h2 class="text-primary my-2">Why Choose Us</h2>
-                <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center justify-content-xl-between">
-                    <div class="">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-award" viewBox="0 0 16 16">
-                                <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"/>
-                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/>
-                            </svg>
-                        </div>
-                        <p class="text-tertiary w-200 fw-bold">Decades of proven experience</p>
-                    </div>
-                    <div class="">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-bar-chart" viewBox="0 0 16 16">
-                                <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
-                            </svg>
-                        </div>
-                        <p class="text-tertiary w-180 fw-bold">Exceeds industry standards</p>
-                    </div>
-                    <div class="">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-boxes" viewBox="0 0 16 16">
-                                <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z"/>
-                            </svg>
-                        </div>
-                        <p class="text-tertiary w-200 fw-bold">Right Weight</p>
-                    </div>
-                    <div class="">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-tags" viewBox="0 0 16 16">
-                                <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z"/>
-                                <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z"/>
-                            </svg>
-                        </div>
-                        <p class="text-tertiary w-200 fw-bold">Right Pricing</p>
-                    </div>
-                    <div class="">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-truck" viewBox="0 0 16 16">
-                                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
-                            </svg>
-                        </div>
-                        <p class="text-tertiary w-200 fw-bold">On time Delivery</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-    <section class="products py-4 content">
-        <div class="text-center">
-            <h2 class="text-primary">Our Other Products</h2>
-        </div>
+	<section class="page-title py-4">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb m-0">
+					<li class="breadcrumb-item">
+						<a href="{{ path('app_homepage') }}" class="text-decoration-none">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="{{ path('app_product_index') }}" class="text-decoration-none">Product</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+				</ol>
+			</nav>
+		</div>
+	</section>
 
-        <div class="container">
-            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
-                {% for product in products %}
-                    <a href="{{ path('app_product_detail', {'slug': product.slug}) }}">
-                        <div  itemscope itemtype="https://schema.org/Product" class="image-container">
-                            <img itemprop="image" src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}">
-                            <div class="overlay">
-                                <h4 itemprop="name">{{ product.name }}</h4>
-                            </div>
-                        </div>
-                    </a>
-                {% endfor %}
-            </div>
-
-            <div class="d-flex justify-content-center align-items-center py-2">
-                <a class="btn bg-body-tertiary text-primary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_product_index') }}">View all</a>
-            </div>
-        </div>
-    </section>
-
-
-
-{#    <section class="blog">#}
-{#        <div class="blog-single gray-bg">#}
-{#            <div class="container">#}
-{#                <div class="row align-items-start">#}
-{#                    <div class="col-lg-8">#}
-{#                        <article class="article">#}
-{#                            <div class="article-img">#}
-{#                                <img src="{{ asset('uploads/product/') }}{{ product.productMedia[0].image }}" title="" alt="">#}
-{#                            </div>#}
-
-{#                            <div class="key-features">#}
-{#                                <h2>Features</h2>#}
-{#                                {{ product.keyFeatures | raw }}#}
-{#                            </div>#}
+	{% if flash_messages|length > 0 %}
+		<div id="flash-messages">
+			{% for label, messages in flash_messages %}
+				{% for message in messages %}
+					<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						{{ message|trans|raw }}
+					</div>
+				{% endfor %}
+			{% endfor %}
+		</div>
+	{% endif %}
 
 
+	<!-- Hero Section -->
+	<section class="hero container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+				{% for image in product.productMedia %}
+					<img class="rounded img-fluid" src="{{ asset('uploads/product/'~image) }}" alt="{{ image }}">
+				{% endfor %}
+			</div>
+			<div class="col-lg-6 col-md-12 py-3">
+				<h1 class="text-secondary">{{ product.name }}</h1>
+				<h4 class="">INR
+					{{ product.amount / 100 }}</h4>
+
+				<div class="pt-2">
+					<p>{{ product.description | raw }}</p>
+
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Get a Quote
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Marquee section -->
+	<section class="pt-5 bg-light">
+		<marquee class="border border-1 py-3" direction="left" loop="">
+			<div class="marquee-content">
+				<div class="marquee-item">
+					<ul>
+						<li>Best
+							{{ product.name }}
+							in the market</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Contact Us to avail discounts</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>High-quality
+							{{ product.name }}
+							you can trust</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Exclusive deals on
+							{{ product.name }}
+							this season</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Shop now for premium
+							{{ product.name }}</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Affordable prices on top-rated
+							{{ product.name }}</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Upgrade your lifestyle with
+							{{ product.name }}</li>
+					</ul>
+				</div>
+
+				<div class="marquee-item">
+					<ul>
+						<li>Discover the best
+							{{ product.name }}
+							offers today</li>
+					</ul>
+				</div>
+			</div>
+		</marquee>
+	</section>
+
+	<!-- Tabs -->
+
+	{#    <hr />#}
+	{#    <section class="tabs">#}
+	{#        <ul class="nav nav-pills mb-3 justify-content-center align-items-center" id="pills-tab" role="tablist">#}
+	{#            <li class="nav-item" role="presentation">#}
+	{#                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Variants</button>#}
+	{#            </li>#}
+	{#            <li class="nav-item" role="presentation">#}
+	{#                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Why Choose Us</button>#}
+	{#            </li>#}
+	{#            <li class="nav-item" role="presentation">#}
+	{#                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Key Features</button>#}
+	{#            </li>#}
+	{#        </ul>#}
+	{#        <div class="tab-content" id="pills-tabContent">#}
+	{#            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">#}
+	{#                <div class="py-5 bg-primary-subtle variants">#}
+	{#                    <div class="container">#}
+	{#                        <div class="d-flex justify-content-center align-items-center mb-3">#}
+	{#                            <h3 class="text-secondary content">Our Variants</h3>#}
+	{#                        </div>#}
+	{#                        <div class="row justify-content-center">#}
+	{#                            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="card content border-0 shadow hover-card">#}
+	{#                                    <img src="{{ asset('uploads/product/square-pipe.png') }}" height="180" class="card-img-top object-fit-contain" alt="square-pipe">#}
+	{#                                    <div class="card-body">#}
+	{#                                        <h5 class="card-title">Square</h5>#}
+	{#                                        <p class="card-text">The square pipes (for construction) are also called ”hollow sections”.</p>#}
+	{#                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">#}
+	{#                                            Get a Quote#}
+	{#                                        </button>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="card content border-0 shadow hover-card">#}
+	{#                                    <img src="{{ asset('uploads/product/rectangle-pipes.png') }}" height="180" class="card-img-top object-fit-contain" alt="rectangle-pipe">#}
+	{#                                    <div class="card-body">#}
+	{#                                        <h5 class="card-title">Rectangle</h5>#}
+	{#                                        <p class="card-text">The  pipes (for construction) are also called ”hollow sections”.</p>#}
+	{#                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">#}
+	{#                                            Get a Quote#}
+	{#                                        </button>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="card content border-0 shadow hover-card">#}
+	{#                                    <img src="{{ asset('uploads/product/round-pipes.png') }}" height="180" class="card-img-top object-fit-contain" alt="round-pipe">#}
+	{#                                    <div class="card-body">#}
+	{#                                        <h5 class="card-title">Round</h5>#}
+	{#                                        <p class="card-text">The square pipes (for construction) are also called ”hollow sections”.</p>#}
+	{#                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">#}
+	{#                                            Get a Quote#}
+	{#                                        </button>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                        </div>#}
+	{#                    </div>#}
+	{#                </div>#}
+	{#            </div>#}
+	{#            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">#}
+	{#                <div class="why-choose py-5">#}
+	{#                    <div class="container-fluid container-sm">#}
+	{#                        <div class="d-flex justify-content-center align-items-center mb-3">#}
+	{#                            <h3 class="text-secondary content">Why Choose Us</h3>#}
+	{#                        </div>#}
+
+	{#                        <div class="row justify-content-center">#}
+	{#                            <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="advantage-item custom-solutions content justify-content-center align-items-center">#}
+	{#                                    <div class="icon">#}
+	{#                                        <i class="fas fa-cogs"></i>#}
+	{#                                    </div>#}
+	{#                                    <div>#}
+	{#                                        <h5 class="m-0">Custom Solutions</h5>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                            <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="advantage-item quality-assurance content justify-content-center align-items-center">#}
+	{#                                    <div class="icon">#}
+	{#                                        <i class="fas fa-check-circle"></i>#}
+	{#                                    </div>#}
+	{#                                    <div>#}
+	{#                                        <h5 class="m-0">Quality Assurance</h5>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                            <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="advantage-item dedicated-support content justify-content-center align-items-center">#}
+	{#                                    <div class="icon">#}
+	{#                                        <i class="fas fa-headset"></i>#}
+	{#                                    </div>#}
+	{#                                    <div>#}
+	{#                                        <h5 class="m-0">Dedicated Support</h5>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                            <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">#}
+	{#                                <div class="advantage-item competitive-pricing content justify-content-center align-items-center">#}
+	{#                                    <div class="icon">#}
+	{#                                        <i class="fas fa-tags"></i>#}
+	{#                                    </div>#}
+	{#                                    <div>#}
+	{#                                        <h5 class="m-0">Competitive Pricing</h5>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            </div>#}
+	{#                        </div>#}
+	{#                    </div>#}
+	{#                </div>#}
+	{#            </div>#}
+	{#            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">#}
+	{#                <section class="key-features py-5 bg-primary-subtle">#}
+	{#                    <div class="container">#}
+	{#                        <h3 class="text-secondary text-center content mb-3">Key Features</h3>#}
+	{#                        <div class="row">#}
+	{#                            {% for feature in featuresArray %}#}
+	{#                                {% set feat = feature|split(':') %}#}
+	{#                                <div class="col-md-6 mb-4">#}
+	{#                                    <div class="feature-box p-4 border rounded shadow  bg-secondary content">#}
+	{#                                        <h5 class="feature-title text-primary mb-3 fw-bold">{{ feat[0]|trim }}</h5>#}
+	{#                                        <p class="feature-description text-white">#}
+	{#                                            {{ feat[1]|trim }}#}
+	{#                                        </p>#}
+	{#                                    </div>#}
+	{#                                </div>#}
+	{#                            {% endfor %}#}
+	{#                        </div>#}
+	{#                    </div>#}
+	{#                </section>#}
+	{#            </div>#}
+	{#        </div>#}
+	{#    </section>#}
+	<!-- Our Variants -->
+		{% if product.productVariants | length %}
+			<div class="py-5 bg-primary-subtle variants"> <div class="container">
+				<div class="d-flex justify-content-center align-items-center mb-3">
+					<h3 class="text-secondary content">Our Variants</h3>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					{% for variant in product.productVariants %}
+						<div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">
+							<div class="card content border-0 shadow hover-card">
+								<img src="{{ asset('uploads/product/') }}{{ variant.image }}" height="180" class="card-img-top object-fit-contain" alt="square-pipe">
+								<div class="card-body">
+									<h5 class="card-title">{{ variant.name }}</h5>
+									<p class="card-text">{{ variant.description }}</p>
+									<div class="hover-content d-none">
+										<div class="mb-2">
+											<h5>Sizes available:</h5>
+											<div class="d-flex gap-3">
+												{% for size in variant.variantSizes %}
+													<small class="p-2 border border-1 rounded-2">{{ size.size }}</small>
+												{% endfor %}
+											</div>
+										</div>
+
+										<div class="mb-2">
+											<h5>Types available:</h5>
+											<div class="d-flex gap-3">
+												{% for option in variant.variantOptions %}
+													<small class="p-2 border border-1 rounded-2">{{ option.name }}</small>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+										Get a Quote
+									</button>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
 
 
-{#                            <div class="why-choose-us">#}
-{#                                <h2>Why Choose Us</h2>#}
-{#                                {{ product.whyChooseus | raw }}#}
+	<div class="why-choose py-5">
+		<div class="container-fluid container-sm">
+			<div class="d-flex justify-content-center align-items-center mb-3">
+				<h3 class="text-secondary content">Why Choose Us</h3>
+			</div>
 
-{#                                <div class="container mt-5">#}
-{#                                    <div class="feature">#}
-{#                                        <i class="fa-solid fa-award feature-icon"></i>#}
-{#                                        <div>#}
-{#                                            <h5>Expertise and Experience</h5>#}
-{#                                            <p>We bring decades of industry experience to provide the highest quality products.</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="feature">#}
-{#                                        <i class="fa-solid fa-cogs feature-icon"></i>#}
-{#                                        <div>#}
-{#                                            <h5>Custom Solutions</h5>#}
-{#                                            <p>Tailored to meet your specific requirements in color and finish.</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="feature">#}
-{#                                        <i class="fa-solid fa-check-circle feature-icon"></i>#}
-{#                                        <div>#}
-{#                                            <h5>Quality Assurance</h5>#}
-{#                                            <p>Stringent quality control measures ensure superior performance and durability.</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="feature">#}
-{#                                        <i class="fa-solid fa-headset feature-icon"></i>#}
-{#                                        <div>#}
-{#                                            <h5>Dedicated Support</h5>#}
-{#                                            <p>Our knowledgeable team offers excellent customer service and technical support.</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="feature">#}
-{#                                        <i class="fa-solid fa-tags feature-icon"></i>#}
-{#                                        <div>#}
-{#                                            <h5>Competitive Pricing</h5>#}
-{#                                            <p>High-quality products at cost-effective prices.</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </article>#}
-
-
-
-{#                    </div>#}
-{#                    <div class="col-lg-4 m-15px-tb blog-aside">#}
-
-{#                        <div class="widget widget-post">#}
-{#                            <div class="widget-title">#}
-{#                                {{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}#}
-
-{#                                <div class="row">#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="firstname" class="form-label">{{ form_label(form.firstname) }}</label>#}
-{#                                            {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'id': 'firstname', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.firstname) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="lastname" class="form-label">{{ form_label(form.lastname) }}</label>#}
-{#                                            {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'id': 'lastname', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.lastname) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="phone" class="form-label">{{ form_label(form.phone) }}</label>#}
-{#                                            {{ form_widget(form.phone, {'attr': {'class': 'form-control', 'id': 'phone', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.phone) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="email" class="form-label">{{ form_label(form.email) }}</label>#}
-{#                                            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'id': 'email', 'type': 'email', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.email, {'attr': {'class': 'text-danger'}}) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="pincode" class="form-label">{{ form_label(form.pincode) }}</label>#}
-{#                                            {{ form_widget(form.pincode, {'attr': {'class': 'form-control', 'id': 'pincode', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.pincode) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-6 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="pincode" class="form-label">{{ form_label(form.product) }}</label>#}
-{#                                            {{ form_widget(form.product, {'attr': {'class': 'form-control', 'id': 'product', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.product) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="col-md-12 col-sm-12">#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="requirement" class="form-label">{{ form_label(form.requirement) }}</label>#}
-{#                                            {{ form_widget(form.requirement, {'attr': {'class': 'form-control', 'id': 'requirement', 'required': true}}) }}#}
-{#                                            {{ form_errors(form.requirement) }}#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-
-{#                                <div class="text-center">#}
-{#                                    <button type="submit" class="btn btn-primary">Submit</button>#}
-{#                                </div>#}
-
-{#                                {{ form_end(form) }}#}
-{#                            </div>#}
-
-{#                        </div>#}
-
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
+			<div class="row justify-content-center">
+				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+					<div class="advantage-item custom-solutions content justify-content-center align-items-center">
+						<div class="icon">
+							<i class="fas fa-cogs"></i>
+						</div>
+						<div>
+							<h5 class="m-0">Custom Solutions</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+					<div class="advantage-item quality-assurance content justify-content-center align-items-center">
+						<div class="icon">
+							<i class="fas fa-check-circle"></i>
+						</div>
+						<div>
+							<h5 class="m-0">Quality Assurance</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+					<div class="advantage-item dedicated-support content justify-content-center align-items-center">
+						<div class="icon">
+							<i class="fas fa-headset"></i>
+						</div>
+						<div>
+							<h5 class="m-0">Dedicated Support</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+					<div class="advantage-item competitive-pricing content justify-content-center align-items-center">
+						<div class="icon">
+							<i class="fas fa-tags"></i>
+						</div>
+						<div>
+							<h5 class="m-0">Competitive Pricing</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
+	<!-- Key Features Section -->
+	<section class="key-features py-5 bg-primary-subtle">
+		<div class="container">
+			<h3 class="text-secondary text-center content mb-3">Key Features</h3>
+			<div class="row">
+				{% for feature in product.productKeyFeatures %}
+					<div class="col-md-6 mb-4">
+						<div class="feature-box p-4 border rounded shadow  bg-secondary content">
+							<div class="d-flex gap-5 justify-content-center align-items-center">
+								<i class="{{ feature.icon }}"></i>
+								<div>
+									<h5 class="feature-title text-primary mb-3 fw-bold">{{ feature.title }}</h5>
+									<p class="feature-description text-white">
+										{{ feature.description }}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<section class="use-cases py-5">
+		<div class="container">
+			<h3 class="text-secondary text-center content mb-3">Use cases</h3>
+
+			<div class="row g-4 justify-content-center">
+				{% for useCase in product.productUseCases %}
+					<div class="col-md-6 col-lg-4">
+						<div class="card h-100 border-0 shadow content">
+							<div class="card-body">
+								<div class="d-flex justify-content-center align-items-center gap-3">
+									<i class="{{ useCase.icon }}"></i>
+									<div>
+										<h5 class="card-title text-primary">{{ useCase.name }}</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+
+	<section class="faq mt-5 py-5 bg-secondary-subtle">
+		<div class="container">
+
+			<div class="d-flex gap-3 justify-content-center align-items-center">
+				<i class="fas fa-question-circle fa-2x text-secondary"></i>
+				<div>
+					<h3 class="text-secondary text-center content m-0">Frequently Asked Questions</h3>
+				</div>
+			</div>
+			<p class="card-text text-center">
+				Find answers to the most common questions regarding our products and services.
+			</p>
+			<div class="accordion shadow" id="accordionExample">
+
+				{% for faq in product.faqs %}
+					<div class="accordion-item content">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button {{ loop.index != 1 ? 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{ faq.id }}" aria-expanded="true" aria-controls="collapseOne{{ faq.id }}">
+								{{ faq.question }}
+							</button>
+						</h2>
+						<div id="collapseOne{{ faq.id }}" class="accordion-collapse collapse {{ loop.index == 1 ? 'show' }}" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+							<div class="accordion-body">
+								{{ faq.answer }}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</section>
+
+	{#    <!-- Applications Section -->#}
+	{#    <section class="applications py-5">#}
+	{#        <div class="container">#}
+	{#            <h2 class="text-center mb-4">Applications</h2>#}
+	{#            <div class="row justify-content-around align-items-center gap-2">#}
+	{#                {% for application in product.productApplications %}#}
+	{#                <div class="col-md-4 p-2 shadow">#}
+	{#                    <img src="{{ asset('uploads/application') }}/{{ application.applicationMedia[0].image }}" alt="{{ application.applicationMedia[0].image }}" class="img-fluid rounded-3">#}
+	{#                    <h4  class="py-2 m-0">{{ application.name }}</h4>#}
+	{#                </div>#}
+	{#                {% endfor %}#}
+	{#            </div>#}
+	{#        </div>#}
+	{#    </section>#}
+
+
+		<section class="products py-4 content"> <div class="text-center">
+			<h2 class="text-primary">Our Other Products</h2>
+		</div>
+
+		<div class="container">
+			<div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
+				{% for product in products %}
+					<a href="{{ path('app_product_detail', {'slug': product.slug}) }}">
+						<div itemscope itemtype="https://schema.org/Product" class="image-container">
+							<img itemprop="image" src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}">
+							<div class="overlay">
+								<h4 itemprop="name">{{ product.name }}</h4>
+							</div>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+
+			<div class="d-flex justify-content-center align-items-center py-2">
+				<a class="btn bg-body-tertiary text-primary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_product_index') }}">View all</a>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}

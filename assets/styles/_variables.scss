@@ -1,7 +1,9 @@
-$primary:       #c8ad7e !default;
-$secondary:     #424f66 !default;
+$primary: #e6e0da !default;
+$secondary: #1f393a !default;
+$last: #b3864c !default;
 
 $theme-colors: (
-        "primary":    $primary,
-        "secondary":  $secondary,
+  "primary": $primary,
+  "secondary": $secondary,
+  "last": $last,
 ) !default;

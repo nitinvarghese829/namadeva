@@ -2,12 +2,11 @@
 @import "_buttons.scss";
 
 @import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+NZ:wght@100..400&display=swap");
 @import "~@fortawesome/fontawesome-free/css/all.css";
 body {
-  //font-family: "Nunito", sans-serif;
+  font-family: "Raleway", sans-serif;
   background: #fff;
 }
 
@@ -45,10 +44,10 @@ body {
   }
 }
 .bg-body-tertiary {
-  background: #424f66 !important;
+  background: $secondary !important;
 }
 .text-fourth {
-  color: #424f66;
+  color: $secondary;
 }
 .text-tertiary {
   color: #e1e0e7 !important;
@@ -141,7 +140,7 @@ section.products {
       justify-content: center;
       align-items: center;
       h4 {
-        background: rgba(201, 174, 126, 0.83);
+        background: $secondary;
       }
     }
   }

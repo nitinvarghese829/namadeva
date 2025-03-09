@@ -3,7 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use App\Form\FaqType;
 use App\Form\ProductImageType;
+use App\Form\ProductKeyFeaturesType;
+use App\Form\ProductUseCaseType;
+use App\Form\ProductVariantType;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -36,6 +40,18 @@ class ProductCrudController extends AbstractCrudController
             CollectionField::new('productMedia')->setEntryType(ProductImageType::class)
                 ->setFormTypeOptions(['by_reference' => false])
                 ->onlyOnForms(),
+            CollectionField::new('productKeyFeatures')->setEntryType(ProductKeyFeaturesType::class)
+            ->setFormTypeOptions(['by_reference' => false])
+            ->onlyOnForms(),
+            CollectionField::new('productVariants')->setEntryType(ProductVariantType::class)
+            ->setFormTypeOptions(['by_reference' => false])
+            ->onlyOnForms(),
+            CollectionField::new('productUseCases')->setEntryType(ProductUseCaseType::class)
+            ->setFormTypeOptions(['by_reference' => false])
+            ->onlyOnForms(),
+            CollectionField::new('faqs')->setEntryType(FaqType::class)
+            ->setFormTypeOptions(['by_reference' => false])
+            ->onlyOnForms()
 
         ];
     }
@@ -60,6 +76,13 @@ class ProductCrudController extends AbstractCrudController
                 $image->setOriginalName($image->getImageFile()->getClientOriginalName());
                 $image->setEncodedName($image->getImageFile()->getClientOriginalName());
                 $image->setImage($image->getImageFile()->getClientOriginalName());
+            }
+        }
+
+        foreach($object->getProductVariants() as $variant){
+            if($variant->getImageFile() instanceof UploadedFile){
+                $variant->setOriginalName($variant->getImageFile()->getClientOriginalName());
+                $variant->setImage($variant->getImageFile()->getClientOriginalName());
             }
         }
     }

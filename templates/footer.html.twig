@@ -1,48 +1,65 @@
-
 <footer class="border-top bg-body-tertiary text-white">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
-            <div class="col mb-3 d-flex align-items-center ">
-                <a href="{{ path('app_homepage') }}" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                    <img src="{{ asset('images/logo.png') }}" width="240" class="d-inline-block align-top" alt="Namadeva">
-                </a>
-            </div>
+	<div class="container">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+			<div class="col mb-3 d-flex align-items-center ">
+				<a href="{{ path('app_homepage') }}" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+					<img src="{{ asset('images/logo-with-tagline.png') }}" width="600" class="d-inline-block align-top" alt="Namdev">
+				</a>
+			</div>
 
-            <div class="col mb-3">
+			<div class="col mb-3"></div>
 
-            </div>
+			<div class="col mb-3"></div>
 
-            <div class="col mb-3">
+			<div class="col mb-3"></div>
 
-            </div>
+			<div class="col mb-3">
+				<h5>Menu</h5>
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_homepage') }}" class="nav-link p-0 text-white-50">Home</a>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_product_index') }}" class="nav-link p-0 text-white-50">Products</a>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_application') }}" class="nav-link p-0 text-white-50">Applications</a>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_about_us') }}" class="nav-link p-0 text-white-50">About Us</a>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_knowledge_hub') }}" class="nav-link p-0 text-white-50">Knowledge Hub</a>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_contact_us') }}" class="nav-link p-0 text-white-50">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="border-top">
+		<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center py-2 container">
+			<p class="m-0">© 2024 Company, Inc. All rights reserved.</p>
+			<ul class="list-unstyled d-flex justify-content-end align-items-center w-50 m-0">
+				<li class="ms-3">
+					<a class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=61561003422235">
+						<i class="fa-brands fa-facebook text-white"></i>
+					</a>
+				</li>
+				<li class="ms-3">
+					<a class="link-body-emphasis" href="https://www.instagram.com/namadevasteel/">
+						<i class="fa-brands fa-instagram text-white"></i>
+					</li>
+				</li>
+				<li class="ms-3">
+					<a class="link-body-emphasis" href="http://www.linkedin.com/in/namadeva-steel-center">
+						<i class="fa-brands fa-linkedin text-white"></i>
+					</li>
+					{#                <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-google text-white"></i></li>#}
+				</li>
+			</ul>
+		</div>
 
-            <div class="col mb-3">
-
-            </div>
-
-            <div class="col mb-3">
-                <h5>Menu</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{{ path('app_homepage') }}" class="nav-link p-0 text-white-50">Home</a></li>
-                    <li class="nav-item mb-2"><a href="{{ path('app_product_index') }}" class="nav-link p-0 text-white-50">Products</a></li>
-                    <li class="nav-item mb-2"><a href="{{ path('app_application') }}" class="nav-link p-0 text-white-50">Applications</a></li>
-                    <li class="nav-item mb-2"><a href="{{ path('app_about_us') }}" class="nav-link p-0 text-white-50">About Us</a></li>
-                    <li class="nav-item mb-2"><a href="{{ path('app_knowledge_hub') }}" class="nav-link p-0 text-white-50">Knowledge Hub</a></li>
-                    <li class="nav-item mb-2"><a href="{{ path('app_contact_us') }}" class="nav-link p-0 text-white-50">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="border-top">
-        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center py-2 container">
-            <p class="m-0">© 2024 Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex justify-content-end align-items-center w-50 m-0">
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=61561003422235"><i class="fa-brands fa-facebook text-white"></i></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com/namadevasteel/"><i class="fa-brands fa-instagram text-white"></i></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="http://www.linkedin.com/in/namadeva-steel-center"><i class="fa-brands fa-linkedin text-white"></i></li>
-{#                <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-google text-white"></i></li>#}
-            </ul>
-        </div>
-
-    </div>
+	</div>
 </footer>
