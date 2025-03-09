@@ -1193,3 +1193,12 @@ section.history {
   font-size: 36px;
   font-weight: bold;
 }
+
+.accordion-button:not(.collapsed) {
+  background-color: $secondary !important;
+  color: white;
+}
+
+.accordion-collapse.collapse.show {
+  background-color: $primary;
+}

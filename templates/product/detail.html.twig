@@ -96,7 +96,7 @@
 				<div class="pt-2">
 					<p>{{ product.description | raw }}</p>
 
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+					<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 						Get a Quote
 					</button>
 				</div>
@@ -313,7 +313,7 @@
 				<div class="d-flex justify-content-center align-items-center mb-3">
 					<h3 class="text-secondary content">Our Variants</h3>
 				</div>
-				<div class="row justify-content-center align-items-center">
+				<div class="row justify-content-center align-items-center g-4">
 					{% for variant in product.productVariants %}
 						<div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">
 							<div class="card content border-0 shadow hover-card">
@@ -324,7 +324,7 @@
 									<div class="hover-content d-none">
 										<div class="mb-2">
 											<h5>Sizes available:</h5>
-											<div class="d-flex gap-3">
+											<div class="d-flex flex-wrap gap-3">
 												{% for size in variant.variantSizes %}
 													<small class="p-2 border border-1 rounded-2">{{ size.size }}</small>
 												{% endfor %}
@@ -340,7 +340,7 @@
 											</div>
 										</div>
 									</div>
-									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+									<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 										Get a Quote
 									</button>
 								</div>
@@ -441,7 +441,7 @@
 								<div class="d-flex justify-content-center align-items-center gap-3">
 									<i class="{{ useCase.icon }}"></i>
 									<div>
-										<h5 class="card-title text-primary">{{ useCase.name }}</h5>
+										<h5 class="card-title text-secondary m-0">{{ useCase.name }}</h5>
 									</div>
 								</div>
 							</div>
@@ -462,7 +462,7 @@
 					<h3 class="text-secondary text-center content m-0">Frequently Asked Questions</h3>
 				</div>
 			</div>
-			<p class="card-text text-center">
+			<p class="card-text text-center fst-italic">
 				Find answers to the most common questions regarding our products and services.
 			</p>
 			<div class="accordion shadow" id="accordionExample">
@@ -475,7 +475,7 @@
 							</button>
 						</h2>
 						<div id="collapseOne{{ faq.id }}" class="accordion-collapse collapse {{ loop.index == 1 ? 'show' }}" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-							<div class="accordion-body">
+							<div class="accordion-body fst-italic">
 								{{ faq.answer }}
 							</div>
 						</div>
@@ -503,7 +503,7 @@
 
 
 		<section class="products py-4 content"> <div class="text-center">
-			<h2 class="text-primary">Our Other Products</h2>
+			<h2 class="text-secondary">Our Other Products</h2>
 		</div>
 
 		<div class="container">
