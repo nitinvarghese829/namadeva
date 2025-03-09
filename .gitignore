@@ -10,6 +10,7 @@ aws_dockerfile
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/public/uploads/
 /var/
 /vendor/
 /Dockerfile
