@@ -10,6 +10,10 @@ body {
   background: #fff;
 }
 
+.filter-white {
+  filter: invert(1);
+}
+
 .marquee-content {
   display: flex;
   gap: 20px; /* Space between the items */
@@ -93,9 +97,11 @@ section.hero {
   }
 }
 
-section.hero img {
+section.hero img,
+section.hero picture {
   height: 300px;
   object-fit: cover;
+  width: 100%;
 }
 section.brands img {
   height: 120px;
@@ -695,6 +701,13 @@ section.blog {
     font-weight: 600;
     margin-bottom: 15px;
   }
+  .article .article-content a {
+    color: $last;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-style: italic;
+  }
+
   .article .article-content img {
     width: 100%;
     object-fit: contain;
@@ -860,7 +873,7 @@ section.about-us {
     background-image: url("../images/about-us.jpeg");
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1201,4 +1214,13 @@ section.history {
 
 .accordion-collapse.collapse.show {
   background-color: $primary;
+}
+
+.hover-dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.hover-dropdown .dropdown-toggle::after {
+  transform: rotate(90deg);
 }

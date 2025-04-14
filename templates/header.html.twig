@@ -3,8 +3,8 @@
 		<a class="navbar-brand" href="{{ path('app_homepage') }}">
 			<img src="{{ asset('images/new-logo.png') }}" width="180" class="d-inline-block align-top" alt="Namdev">
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+		<button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon filter-white"></span>
 		</button>
 
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -13,16 +13,22 @@
 				<li class="nav-item {{ route == 'app_homepage' ? 'active' }} px-2">
 					<a class="nav-link text-white" href="{{ path('app_homepage') }}">Home</a>
 				</li>
-				<li class="nav-item {{ route == 'app_product_index' ? 'active' }}  dropdown px-2">
+				<li class="nav-item {{ route == 'app_product_index' ? 'active' }} hover-dropdown hover-dropdown hover-dropdown dropdown px-2">
 					<a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Our Products
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=metal-sheets" data-tab="metal-sheets">Metal Sheets</a>
+							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=structural-steel" data-tab="structural-steel">Structural Steel</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=structural-steel" data-tab="structural-steel">Structural Steel</a>
+							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=roofing-solutions" data-tab="structural-steel">Roofing Solutions</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=jali-products" data-tab="structural-steel">Jali Products</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('app_product_index') }}?type=exterior-solutions" data-tab="structural-steel">Exterior Solutions</a>
 						</li>
 					</ul>
 				</li>
@@ -33,12 +39,27 @@
 				<li class="nav-item {{ route == 'app_about_us' ? 'active' }} px-2">
 					<a class="nav-link text-white" href="{{ path('app_about_us') }}">About Us</a>
 				</li>
-				<li class="nav-item {{ route == 'app_knowledge_hub' ? 'active' }} px-2">
-					<a class="nav-link text-white" href="{{ path('app_knowledge_hub') }}">Knowledge Hub</a>
+				<li class="nav-item {{ route == 'app_knowledge_hub_blogs' ? 'active' }} px-2">
+					<a class="nav-link text-white" href="{{ path('app_knowledge_hub_blogs') }}">Blogs</a>
 				</li>
 				<li class="nav-item {{ route == 'app_contact_us' ? 'active' }} px-2">
 					<a class="nav-link text-white" href="{{ path('app_contact_us') }}">Contact Us</a>
 				</li>
+
+				<li class="nav-item {{ route == 'app_contact_us' ? 'active' }} px-2">
+					<div class="d-flex gap-2 align-items-center">
+						<div>
+							<i class="fa-solid fa-phone fa-2x text-white"></i>
+						</div>
+						<div>
+							<small class="text-white">Call Us Now</small>
+							<div>
+								<a href="tel:+919916225677" class="text-last m-0 fw-bold text-decoration-none">+91 99162 25677</a>
+							</div>
+						</div>
+					</div>
+				</li>
+
 			</ul>
 			<ul class="navbar-nav">
 				{% if route != "app_homepage" %}

@@ -1,56 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
-{% block meta_description %}{{ page.description }}{% endblock %}
-{% block meta_keywords %}{{ page.keyword }}{% endblock %}
+{% block title %}
+	{{ page.title }}
+{% endblock %}
+{% block meta_description %}
+	{{ page.description }}
+{% endblock %}
+{% block meta_keywords %}
+	{{ page.keyword }}
+{% endblock %}
 
 {% block body %}
-    <section class="page-title py-4">
-        <div class="text-center animate__animated  animate__fadeInDown">
-            <h2 class="text-primary mb-3">Blogs</h2>
-        </div>
-        <div class="text-center container animate__animated  animate__fadeInDown">
-            <p class="text-secondary m-0">A blog is a regularly updated online platform where individuals or organizations share articles, insights, or personal reflections on specific topics of interest. It serves as a dynamic medium for expressing ideas, engaging with audiences, and fostering community interaction.</p>
-        </div>
-    </section>
+	<section class="page-title py-4">
+		<div class="text-center animate__animated  animate__fadeInDown">
+			<h2 class="text-last mb-3">Blogs</h2>
+		</div>
+		<div class="text-center container animate__animated  animate__fadeInDown">
+			<p class="text-secondary m-0">A blog is a regularly updated online platform where individuals or organizations share articles, insights, or personal reflections on specific topics of interest. It serves as a dynamic medium for expressing ideas, engaging with audiences, and fostering community interaction.</p>
+		</div>
+	</section>
 
 
-    <section class="blogs-listing py-4">
-        <div class="container">
-            <div class="row">
-                {% for blog in blogs %}
-                <div class="col-lg-4 col-md-6 mt-4 pt-2 blog">
-                    <a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" >
-                        <div class="blog-post rounded border">
-                            <div class="blog-img d-block overflow-hidden position-relative">
-                                <img src="{{ asset('uploads/blogs') }}/{{ blog.blogsMedia[0].image }}" class="img-fluid rounded-top w-100" alt="">
-                                <div class="overlay rounded-top bg-dark"></div>
-                            </div>
-                            <div class="content p-3">
-                                <div class="d-flex justify-content-between">
-                                    <small class="text-muted p float-right">{{ blog.createdAt | date('jS M, y') }}</small>
-                                    <small><a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-primary text-decoration-none">{{ blog.tags }}</a></small>
-                                </div>
+	<section class="blogs-listing py-4">
+		<div class="container">
+			<div class="row">
+				{% for blog in blogs %}
+					<div class="col-lg-4 col-md-6 mt-4 pt-2 blog">
+						<a class="text-decoration-none" href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}">
+							<div class="blog-post rounded border">
+								<div class="blog-img d-block overflow-hidden position-relative">
+									<img src="{{ asset('uploads/blogs') }}/{{ blog.blogsMedia[0].image }}" class="img-fluid rounded-top w-100" alt="">
+									<div class="overlay rounded-top bg-dark"></div>
+								</div>
+								<div class="content p-3">
+									<div class="d-flex justify-content-between">
+										<small class="text-muted p float-right">{{ blog.createdAt | date('jS M, y') }}</small>
+										<small>
+											<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-secondary text-decoration-none">{{ blog.tags }}</a>
+										</small>
+									</div>
 
-                                <h4 class="mt-2"><a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-dark title text-decoration-none">{{ blog.name }}</a></h4>
-                                {# <div class="text-muted mt-2 description">{{ blog.description | raw }}</div> #}
-                                {% if blog.author %}
-                                <div class="pt-3 mt-3 border-top d-flex gap-2">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
-                                    <div class="author mt-2">
-                                        <h6 class="mb-0 text-muted">{{ blog.author }}</h6>
-                                    </div>
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
+									<h4 class="mt-2">
+										<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-secondary title text-decoration-none">{{ blog.name }}</a>
+									</h4>
+									{# <div class="text-muted mt-2 description">{{ blog.description | raw }}</div> #}
+									{% if blog.author %}
+										<div class="pt-3 mt-3 border-top d-flex gap-2">
+											<img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+											<div class="author mt-2">
+												<h6 class="mb-0 text-muted">{{ blog.author }}</h6>
+											</div>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
 
 
-            </div>
-        </div>
-    </section>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}

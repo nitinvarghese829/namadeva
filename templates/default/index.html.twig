@@ -20,25 +20,38 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="uploads/carousel/carousel1.jpeg" class="d-block w-100" alt="...">
+						<picture>
+							<!-- Extra small screens (xs) -->
+							<source
+							srcset="uploads/carousel/carousel-sm.png" media="(max-width: 767px)">
+
+							<!-- Fallback image (if none of the above match) -->
+							<img src="uploads/carousel/carousel1.jpeg" alt="Responsive Image">
+
+						</picture>
+
+
+						{# <img src="uploads/carousel/carousel1.jpeg" class="d-block" alt="..."> #}
+
 						<div class="carousel-caption d-flex flex-column justify-content-center h-100">
 							<h1 class="animate__animated animate__backInDown">Building a
 								<span class="text-secondary">stronger tomorrow</span>
 								<br/>with generations of expertise</h1>
-							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-primary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_about_us') }}">Know more</a>
+							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-primary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="uploads/carousel/carousel2.jpeg" class="d-block w-100" alt="...">
+						<img src="uploads/carousel/carousel2.jpeg" class="d-block" alt="...">
 						<div class="carousel-caption d-flex flex-column justify-content-center h-100">
 							<h1 class="animate__animated animate__backInDown">Your trusted source for
 								<br/><span class="text-primary">high-quality structural materials</span>
 							</h1>
-							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_product_index') }}">Explore now</a>
+							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="uploads/carousel/carousel3.jpeg" class="d-block w-100" alt="...">
+						<img src="uploads/carousel/carousel3.jpeg" class="d-block" alt="...">
+
 						<div class="carousel-caption d-flex flex-column justify-content-center h-100">
 							<h1 class="animate__animated animate__backInDown">
 								<span class="text-primary fw-bold">Precision</span>
@@ -48,7 +61,7 @@
 								<span class="text-primary fw-bold">excellence</span>
 								<br/>
 								in every crafted piece</h1>
-							<a class="animate__animated animate__backInDown btn bg-primary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Learn more</a>
+							<a class="animate__animated animate__backInDown btn bg-primary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 				</div>
@@ -63,35 +76,59 @@
 			</div>
 		</section>
 
+		<section class="name-change">
+			<div class="container my-3">
+				<div class="text-center">
+					<h1 class="text-secondary fw-bold mb-3">A New Name, A Stronger Commitment</h1>
+					<p class="text-center m-0">Namadeva Steel Center is now
+						<span class="text-last">Namdev Infratech</span>
+						to better represent what we do today. What started in
+						<strong>2003</strong>
+						as a simple material supply business has grown into a complete solution provider for interior design, architecture, and construction. From handling
+						<strong>25 tonnes</strong>
+						back then to managing
+						<strong>400 tonnes</strong>
+						per month now, we’ve come a long way.
+						<br/>
+						Over the years, we’ve learned a lot about the challenges
+						<span class="fst-italic text-last">designers, architects, and contractors</span>
+						face, and we’ve adapted to meet their needs. With services like
+						<span class="fst-italic text-last">custom fabrication, laser cutting, HR plate cutting, and more</span>, our new name reflects our commitment to providing innovative, reliable solutions that help turn their ideas into reality.</p>
+
+
+				</div>
+			</div>
+		</section>
+
 		<section class="infographic-wrapper mb-4 bg-secondary">
 			<div class="container">
 				<div class="infographic text-center p-4">
 					<h2 class="text-primary my-2">Namdev Infratech</h2>
 					<p class="m-0 fst-italic fw-semibold text-white-50">Build a strongest tomorrow with generations of expertise.</p>
 
-					<div class="d-flex justify-content-lg-between gap-5 flex-wrap align-items-center justify-content-center">
-						<div class="content">
-							<div class="icon">
+					<div class="row justify-content-lg-between align-items-center justify-content-center">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 px-0 content">
+							<div class="icon mx-0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-buildings" viewbox="0 0 16 16">
 									<path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z"/>
 									<path d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z"/>
 								</svg>
 							</div>
 							<p class="text-tertiary w-200 fw-bold">
-								<span id="yearsInIndustry">21</span>+ years in the industry</p>
+								<span id="yearsInIndustry">27</span>+ years in the industry</p>
 						</div>
-						<div class="content">
-							<div class="icon">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 px-0 content">
+							<div class="icon mx-0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-award" viewbox="0 0 16 16">
 									<path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"/>
 									<path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/>
 								</svg>
 							</div>
 							<p class="text-tertiary w-180 fw-bold">
-								<span id="yearsOfExpertise">80</span>+ years of expertise</p>
+								<span id="yearsOfExpertise">70</span>+ years of expertise</p>
 						</div>
-						<div class="content">
-							<div class="icon">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 px-0 content">
+							<div class="icon mx-0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-people" viewbox="0 0 16 16">
 									<path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
 								</svg>
@@ -99,8 +136,8 @@
 							<p class="text-tertiary w-200 fw-bold">
 								<span id="happyClients">150</span>K+ happy clients</p>
 						</div>
-						<div class="content">
-							<div class="icon">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 px-0 content">
+							<div class="icon mx-0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary" viewbox="0 0 576 512">
 									<path d="M64 32C46.3 32 32 46.3 32 64l0 240 0 48 0 80c0 26.5 21.5 48 48 48l416 0c26.5 0 48-21.5 48-48l0-128 0-151.8c0-18.2-19.4-29.7-35.4-21.1L352 215.4l0-63.2c0-18.2-19.4-29.7-35.4-21.1L160 215.4 160 64c0-17.7-14.3-32-32-32L64 32z"/>
 								</svg>
@@ -108,22 +145,6 @@
 							<p class="text-tertiary w-200 fw-bold">
 								<span id="monthlySale">400</span>+ tonnes sold in a month</p>
 						</div>
-						{#                    <div class="">#}
-					{#                        <div class="icon">#}
-						{#                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-check-circle-fill" viewBox="0 0 16 16">#}
-						{#                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>#}
-						{#                            </svg>#}
-						{#                        </div>#}
-						{#                        <p class="text-tertiary w-200 fw-bold"><span id="successfulProjects">1000</span>+ successful projects</p>#}
-						{#                    </div>#}
-						{#                    <div class="">#}
-						{#                        <div class="icon">#}
-						{#                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-primary bi bi-box-seam" viewBox="0 0 16 16">#}
-						{#                                <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>#}
-						{#                            </svg>#}
-						{#                        </div>#}
-						{#                        <p class="text-tertiary w-200 fw-bold"><span id="kilosOfSteel">990</span> kilos of steel sold</p>#}
-						{#                    </div>#}
 					</div>
 				</div>
 			</div>
@@ -149,87 +170,30 @@
 			</div>
 		</section>
 
-		<section class="how-we-work bg-secondary">
-			<div class="container p-5">
-				<div class="text-center mb-5">
-					<h2 class="text-primary">How We Work</h2>
-					<p class="text-white-50 fst-italic fw-semibold">We don't focus on selling what we want; instead, we aim to offer our customers what's truly best for them.</p>
-				</div>
-				<div class="infographic">
-					<div class="d-flex justify-content-lg-between gap-2 flex-wrap align-items-center justify-content-center">
-						<div class="content text-center">
-							<div class="icon">
-								<i class="fa-regular fa-envelope text-primary fa-2x"></i>
-							</div>
-							<p class="text-tertiary w-200 fw-bold">Send an Enquiry</p>
-						</div>
-						<div class="content text-center">
-							<div class="icon">
-								<i class="fa-solid fa-phone text-primary fa-2x"></i>
-							</div>
-							<p class="text-tertiary w-180 fw-bold">Get a call</p>
-						</div>
-						<div class="content text-center">
-							<div class="icon">
-								<i class="fa-solid fa-gear text-primary fa-2x"></i>
-							</div>
-							<p class="text-tertiary w-200 fw-bold">Place your order</p>
-						</div>
-						<div class="content text-center">
-							<div class="icon">
-								<i class="fa-solid fa-truck-fast text-primary fa-2x"></i>
-							</div>
-							<p class="text-tertiary w-200 fw-bold">We'll Transport Order</p>
-						</div>
-						<div class="content text-center">
-							<div class="icon">
-								<i class="fa-regular fa-calendar-check text-primary fa-2x"></i>
-							</div>
-							<p class="text-tertiary w-200 fw-bold">Get on-time delivery</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="brands py-4">
-			<div class="text-center">
-				<h2 class="text-secondary">Brands we deal</h2>
-			</div>
-			<div class="swiper mySwiper">
-				<div class="swiper-wrapper">
-					{#                <div class="swiper-slide"><img src="{{ asset('images/brands/bhushan.png') }}" alt="bhushan" /> </div>#}
-					{#                <div class="swiper-slide"><img src="{{ asset('images/brands/essar.png') }}" alt="essar" /> </div>#}
-						<div class="swiper-slide content"> <img src="{{ asset('images/brands/jindal.jpeg') }}" alt="jindal"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/a-one.jpg') }}" alt="a-one"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/apollo-pipes.png') }}" alt="apollo-pipes"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/meenakshi-tmt.png') }}" alt="meenakshi"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/nezone-logo.png') }}" alt="nezone"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/vizag-steel-logo.png') }}" alt="vizag"/>
-					</div>
-					{#                <div class="swiper-slide"><img src="{{ asset('images/brands/shyam.png') }}" alt="shyam" /> </div>#}
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/jsw.png') }}" alt="jsw"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/sail.png') }}" alt="sail"/>
-					</div>
-					<div class="swiper-slide content"><img src="{{ asset('images/brands/tata-steel.png') }}" alt="tata-steel"/>
-					</div>
-				</div>
-				<div class="swiper-pagination"></div>
-			</div>
-		</section>
 
 		<section class="products py-4 content">
 			<div class="text-center">
 				<h2 class="text-secondary">Our Products</h2>
 				<p class="text-black-50 fst-italic fw-semibold">Durable structural solutions that ensure reliability and quality for every project</p>
+			</div>
 
+			<div class="container">
+				<div class="row g-3 py-3">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+						<a href="{{ path('app_product_index') }}?type=structural-steel" class="btn btn-secondary fw-bold">Stuctural Steel</a>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+						<a href="{{ path('app_product_index') }}?type=roofing-solutions" class="btn btn-primary fw-bold text-black">Roofing Solutions</a>
+					</div>
+
+					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+						<a href="{{ path('app_product_index') }}?type=jali-products" class="btn btn-secondary fw-bold">Jali Products</a>
+					</div>
+
+					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+						<a href="{{ path('app_product_index') }}?type=exterior-solutions" class="btn btn-primary fw-bold text-black">Exterior Solutions</a>
+					</div>
+				</div>
 			</div>
 
 			<div class="container d-none d-md-block my-5">
@@ -264,28 +228,145 @@
 			</div>
 		</section>
 
-		{#    <section class="products py-4">#}
-		{#        <div class="text-center">#}
-		{#            <h2 class="text-primary">Our Services</h2>#}
-		{#            <p>Durable structural solutions that ensure reliability and quality for every project</p>#}
-		{#        </div>#}
+		<section class="services">
+			<div class="bg-secondary py-5">
+				<div class="container py-4">
+					<div class="text-center">
+						<h2 class="text-white">Our Services</h2>
+						<p class="text-white-50 fst-italic fw-semibold">Expanding Our Services for Your Needs.</p>
+					</div>
 
-		{#        <div class="container">#}
-		{#            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">#}
-		{#                {% for product in products %}#}
-		{#                    <div class="image-container">#}
-		{#                        <img src="{{ asset('uploads/product') }}/{{ product.productMedia[0].image }}" alt="{{ product.productMedia[0].image }}">#}
-		{#                        <div class="overlay">#}
-		{#                            <h4>{{ product.name }}</h4>#}
-		{#                        </div>#}
-		{#                    </div>#}
-		{#                {% endfor %}#}
-		{#            </div>#}
-		{#        </div>#}
-		{#    </section>#}
+					<div>
+						<p class="text-center text-white">
+							At Namadev Infratech, after two decades of delivering top-quality steel, we’ve expanded our offerings to meet the evolving needs of our clients. Our expertise now spans a wide range of fabrication services, from custom steel structures to specialized solutions for construction and industrial projects. We’ve listened to our clients, understood their requirements, and crafted tailored services to provide the best results. With our experience and commitment to quality, we’re here to turn your vision into reality with precision and care.
+						</p>
+					</div>
+
+					<div class="swiper services-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/structural.webp') }}" alt="structural"/>
+
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Structural Fabrication</p>
+							</div>
+
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/general.webp') }}" alt="general"/>
+
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">General Fabrication</p>
+							</div>
+
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/elevation.webp') }}" alt="structural"/>
+
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Elevation/Facade Service</p>
+							</div>
+
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/wall-partition.webp') }}" alt="metal partition"/>
 
 
-			<section class="testimonials"> <div class="row m-0 p-0">
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Metal Partition</p>
+							</div>
+
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/warehouses.webp') }}" alt="warehouse"/>
+
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Warehouses</p>
+							</div>
+
+							<div class="swiper-slide content position-relative">
+								<img class="shadow rounded-3 w-100" src="{{ asset('images/services/custom.webp') }}" alt="custom"/>
+
+								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Custom Jobs</p>
+							</div>
+
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+		<section class="how-we-work bg-secondary">
+			<div class="container p-5">
+				<div class="text-center mb-5">
+					<h2 class="text-primary">How We Work</h2>
+					<p class="text-white-50 fst-italic fw-semibold">We don't focus on selling what we want; instead, we aim to offer our customers what's truly best for them.</p>
+				</div>
+				<div class="infographic">
+					<div class="row justify-content-lg-between flex-wrap align-items-center justify-content-center">
+						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
+							<div class="icon mx-0">
+								<i class="fa-regular fa-envelope text-primary fa-2x"></i>
+							</div>
+							<p class="text-tertiary fw-bold">Send an Enquiry</p>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
+							<div class="icon mx-0">
+								<i class="fa-solid fa-phone text-primary fa-2x"></i>
+							</div>
+							<p class="text-tertiary fw-bold">Get a call</p>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
+							<div class="icon mx-0">
+								<i class="fa-solid fa-gear text-primary fa-2x"></i>
+							</div>
+							<p class="text-tertiary fw-bold">Place your order</p>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
+							<div class="icon mx-0">
+								<i class="fa-solid fa-truck-fast text-primary fa-2x"></i>
+							</div>
+							<p class="text-tertiary fw-bold">We'll Transport Order</p>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
+							<div class="icon mx-0">
+								<i class="fa-regular fa-calendar-check text-primary fa-2x"></i>
+							</div>
+							<p class="text-tertiary fw-bold">Get on-time delivery</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="brands py-4">
+			<div class="text-center">
+				<h2 class="text-secondary">Brands we deal</h2>
+			</div>
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide content">
+						<img src="{{ asset('images/brands/jindal.jpeg') }}" alt="jindal"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/a-one.jpg') }}" alt="a-one"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/apollo-pipes.png') }}" alt="apollo-pipes"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/meenakshi-tmt.png') }}" alt="meenakshi"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/nezone-logo.png') }}" alt="nezone"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/vizag-steel-logo.png') }}" alt="vizag"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/jsw.png') }}" alt="jsw"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/sail.png') }}" alt="sail"/>
+					</div>
+					<div class="swiper-slide content"><img src="{{ asset('images/brands/tata-steel.png') }}" alt="tata-steel"/>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+
+
+		<section class="testimonials">
+			<div class="row m-0 p-0">
 				<div class="col-lg-6 col-md-12 bg-secondary py-5 px-0">
 					<div class="d-flex align-items-center justify-content-center h-100">
 						<div class="container">
@@ -362,12 +443,13 @@
 										<div class="d-flex justify-content-between">
 											<small class="text-muted p float-right">{{ blog.createdAt | date('jS M, y') }}</small>
 											<small>
-												<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-primary text-decoration-none">{{ blog.tags }}</a>
+												<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-secondary text-decoration-none">{{ blog.tags }}</a>
 											</small>
 										</div>
 
 										<h4 class="mt-2">
-											<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-dark title text-decoration-none">{{ blog.name }}</a>
+											<a href="{{ path('app_knowledge_hub_blogs_blog', {'slug' : blog.slug}) }}" class="text-secondary title text-decoration-none">{{ blog.name }}</a>
+
 										</h4>
 										{% if blog.author %}
 											<div class="pt-3 mt-3 border-top d-flex gap-2">
@@ -391,24 +473,6 @@
 				</div>
 			</div>
 		</section>
-
-		{#    <section class="brands py-4">#}
-	{#        <div class="text-center">#}
-		{#            <h2 class="text-primary">Our Clients</h2>#}
-		{#        </div>#}
-		{#        <div class="swiper mySwiper">#}
-		{#            <div class="swiper-wrapper">#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/bhushan.png') }}" alt="bhushan" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/essar.png') }}" alt="essar" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/jindal.jpeg') }}" alt="jindal" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/shyam.png') }}" alt="shyam" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/jsw.png') }}" alt="jsw" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/sail.png') }}" alt="sail" /> </div>#}
-		{#                <div class="swiper-slide"><img src="{{ asset('images/brands/tata-steel.png') }}" alt="tata-steel" /> </div>#}
-		{#            </div>#}
-		{#            <div class="swiper-pagination"></div>#}
-		{#        </div>#}
-		{#    </section>#}
 
 	</div>
 {% endblock %}

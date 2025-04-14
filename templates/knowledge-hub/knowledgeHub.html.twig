@@ -1,43 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
-{% block meta_description %}{{ page.description }}{% endblock %}
-{% block meta_keywords %}{{ page.keyword }}{% endblock %}
+{% block title %}
+	{{ page.title }}
+{% endblock %}
+{% block meta_description %}
+	{{ page.description }}
+{% endblock %}
+{% block meta_keywords %}
+	{{ page.keyword }}
+{% endblock %}
 
 {% block body %}
-    <section class="page-title py-4">
-        <div class="text-center animate__animated  animate__fadeInDown">
-            <h2 class="text-primary mb-3">Knowledge Hub</h2>
-        </div>
-        <div class="text-center container animate__animated  animate__fadeInDown">
-            <p class="text-secondary m-0">A centralized knowledge hub to efficiently manage and share industry insights, product information, and best practices. This platform will enhance collaboration among team members, provide easy access to resources, and foster continuous learning and innovation within the steel industry.</p>
-        </div>
-    </section>
+	<section class="page-title py-4">
+		<div class="text-center animate__animated  animate__fadeInDown">
+			<h2 class="text-last mb-3">Knowledge Hub</h2>
+		</div>
+		<div class="text-center container animate__animated  animate__fadeInDown">
+			<p class="text-secondary m-0">A centralized knowledge hub to efficiently manage and share industry insights, product information, and best practices. This platform will enhance collaboration among team members, provide easy access to resources, and foster continuous learning and innovation within the steel industry.</p>
+		</div>
+	</section>
 
 
-    <section class="products py-4">
-        <div class="container py-4 my-4">
-            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
-                <a href="{{ path('app_knowledge_hub_blogs') }}" class="image-container bg-primary">
-                    <img class="bg-primary" src="{{ asset('uploads/knowledge-hub/blog.jpg') }}" alt="blogs">
-                    <div class="overlay">
-                        <h4>Blogs</h4>
-                    </div>
-                </a>
-                <div class="image-container">
-                    <img src="{{ asset('uploads/knowledge-hub/case-study.jpg') }}" alt="case studies">
-                    <div class="overlay">
-                        <h4>Case Studies</h4>
-                    </div>
-                </div>
-                <div class="image-container">
-                    <img src="{{ asset('uploads/knowledge-hub/research.jpg') }}" alt="Research Paper">
-                    <div class="overlay">
-                        <h4>Research Paper</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="products py-4">
+		<div class="container py-4 my-4">
+			<div class="d-flex justify-content-center align-items-center gap-3 flex-wrap flex-sm-nowrap">
+				<a href="{{ path('app_knowledge_hub_blogs') }}" class="image-container bg-primary">
+					<img class="bg-primary" src="{{ asset('uploads/knowledge-hub/blog.jpg') }}" alt="blogs">
+					<div class="overlay">
+						<h4>Blogs</h4>
+					</div>
+				</a>
+				<div class="image-container">
+					<img src="{{ asset('uploads/knowledge-hub/case-study.jpg') }}" alt="case studies">
+					<div class="overlay">
+						<h4>Case Studies</h4>
+					</div>
+				</div>
+				<div class="image-container">
+					<img src="{{ asset('uploads/knowledge-hub/research.jpg') }}" alt="Research Paper">
+					<div class="overlay">
+						<h4>Research Paper</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}
