@@ -13,7 +13,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Enquire Now</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -23,11 +23,45 @@
 
 						<div class="col-md-6 col-sm-12">
 							<div class="mb-3">
+								<label for="firstname" class="form-label text-black">{{ form_label(form.firstname) }}</label>
+								{{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'id': 'firstname', 'required': true}}) }}
+								{{ form_errors(form.firstname) }}
+							</div>
+						</div>
+
+						<div class="col-md-6 col-sm-12">
+							<div class="mb-3">
+								<label for="lastname" class="form-label text-black">{{ form_label(form.lastname) }}</label>
+								{{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'id': 'lastname', 'required': true}}) }}
+								{{ form_errors(form.lastname) }}
+							</div>
+						</div>
+
+						<div class="col-md-6 col-sm-12">
+							<div class="mb-3">
+								<label for="email" class="form-label text-black">{{ form_label(form.email) }}</label>
+								{{ form_widget(form.email, {'attr': {'class': 'form-control', 'id': 'email', 'required': true}}) }}
+								{{ form_errors(form.email) }}
+							</div>
+						</div>
+
+
+						<div class="col-md-6 col-sm-12">
+							<div class="mb-3">
 								<label for="phone" class="form-label text-black">{{ form_label(form.phone) }}</label>
 								{{ form_widget(form.phone, {'attr': {'class': 'form-control', 'id': 'phone', 'required': true}}) }}
 								{{ form_errors(form.phone) }}
 							</div>
 						</div>
+
+						<div class="col-md-12 col-sm-12">
+							<div class="mb-3">
+								<label for="requirement" class="form-label text-black">{{ form_label(form.requirement) }}</label>
+								{{ form_widget(form.requirement, {'attr': {'class': 'form-control', 'id': 'requirement', 'required': true}}) }}
+								{{ form_errors(form.requirement) }}
+							</div>
+						</div>
+
 
 						<div class="col-md-6 col-sm-12">
 							<div class="mb-3">
@@ -40,7 +74,7 @@
 					</div>
 
 					<div class="text-center">
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-secondary fw-bold">Submit</button>
 					</div>
 
 					{{ form_end(form) }}
@@ -93,7 +127,9 @@
 
 				<div class="pt-2">
 					<p>{{ product.description | raw }}</p>
+				</div>
 
+				<div class="text-lg-start text-center">
 					<button type="button" class="btn btn-secondary fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
 						Get a Quote
 					</button>
@@ -361,40 +397,40 @@
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
 					<div class="advantage-item custom-solutions content justify-content-center align-items-center">
 						<div class="icon">
-							<i class="fas fa-cogs"></i>
+							<i class="fas fa-shield-alt"></i>
 						</div>
 						<div>
-							<h5 class="m-0">Custom Solutions</h5>
+							<h5 class="m-0">Trusted Quality</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
 					<div class="advantage-item quality-assurance content justify-content-center align-items-center">
 						<div class="icon">
-							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-graduation-cap"></i>
 						</div>
 						<div>
-							<h5 class="m-0">Quality Assurance</h5>
+							<h5 class="m-0">Proven Expertise</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
 					<div class="advantage-item dedicated-support content justify-content-center align-items-center">
 						<div class="icon">
-							<i class="fas fa-headset"></i>
+							<i class="fas fa-clock"></i>
 						</div>
 						<div>
-							<h5 class="m-0">Dedicated Support</h5>
+							<h5 class="m-0">On-Time Delivery</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
 					<div class="advantage-item competitive-pricing content justify-content-center align-items-center">
 						<div class="icon">
-							<i class="fas fa-tags"></i>
+							<i class="fas fa-project-diagram"></i>
 						</div>
 						<div>
-							<h5 class="m-0">Competitive Pricing</h5>
+							<h5 class="m-0">Complete Solutions</h5>
 						</div>
 					</div>
 				</div>

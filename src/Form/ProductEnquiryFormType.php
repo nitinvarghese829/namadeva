@@ -16,7 +16,11 @@ class ProductEnquiryFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('firstname', null, ['required' => false])
+            ->add('lastname', null,  ['required' => false])
             ->add('phone', null, ['required' => false])
+            ->add('email', EmailType::class, ['required' => false])
+            ->add('requirement', null,  ['required' => false])
             ->add('product', EntityType::class, [
                 'class' => Product::class,
                 'choice_label' => 'name',

@@ -282,7 +282,7 @@ section.page-title {
 section.applications,
 div.applications {
   img {
-    max-height: 700px;
+    max-height: 400px;
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -298,12 +298,12 @@ div.applications {
   }
   .swiper {
     width: 100%;
-    height: 100%;
+    height: 70%;
   }
   .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: cover;
   }
 
@@ -1184,17 +1184,16 @@ section.history {
   background-color: #007bff; /* Blue */
 }
 .custom-solutions {
-  background-color: #28a745; /* Green */
+  background-color: #1d2202; /* Green */
 }
 .quality-assurance {
-  background-color: #dc3545; /* Red */
+  background-color: #35322f; /* Red */
 }
 .dedicated-support {
-  background-color: #17a2b8; /* Teal */
+  background-color: #b3864c; /* Teal */
 }
 .competitive-pricing {
-  background-color: #ffc107; /* Yellow */
-  color: #212529; /* Dark text for contrast */
+  background-color: #823a29; /* Yellow */
 }
 .icon {
   margin-right: 20px;
@@ -1223,4 +1222,18 @@ section.history {
 
 .hover-dropdown .dropdown-toggle::after {
   transform: rotate(90deg);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000; /* arrow color */
+  background-color: #f0f0f0; /* light grey background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important;
 }

@@ -16,7 +16,7 @@ import "bootstrap";
 
 // import Swiper JS
 import Swiper from "swiper";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 // import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -317,7 +317,7 @@ $(document).ready(function () {
   });
 
   var swiperApp = new Swiper(".services-swiper", {
-    modules: [Autoplay],
+    modules: [Autoplay, Navigation],
     slidesPerView: 4,
     spaceBetween: 20,
     speed: 800,
@@ -330,6 +330,10 @@ $(document).ready(function () {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     breakpoints: {
       0: {
@@ -371,8 +375,8 @@ $(document).ready(function () {
     duration: 5, // duration of the animation in seconds
   };
 
-  const yearsInIndustry = new CountUp("yearsInIndustry", 21, options); // replace 10 with the actual number
-  const yearsOfExpertise = new CountUp("yearsOfExpertise", 80, options); // replace 100 with the actual number
+  const yearsInIndustry = new CountUp("yearsInIndustry", 27, options); // replace 10 with the actual number
+  const yearsOfExpertise = new CountUp("yearsOfExpertise", 70, options); // replace 100 with the actual number
   const happyClients = new CountUp("happyClients", 150, options); // replace 200 with the actual number
   const successfulProjects = new CountUp("successfulProjects", 300, options); // replace 300 with the actual number
   const kilosOfSteel = new CountUp("kilosOfSteel", 400, options); // replace 400 with the actual number

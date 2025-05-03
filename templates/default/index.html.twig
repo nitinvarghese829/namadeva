@@ -229,8 +229,8 @@
 		</section>
 
 		<section class="services">
-			<div class="bg-secondary py-5">
-				<div class="container py-4">
+			<div class="bg-secondary pt-5 pb-3">
+				<div class="container">
 					<div class="text-center">
 						<h2 class="text-white">Our Services</h2>
 						<p class="text-white-50 fst-italic fw-semibold">Expanding Our Services for Your Needs.</p>
@@ -245,49 +245,75 @@
 					<div class="swiper services-swiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/structural.webp" alt="structural"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Structural Fabrication</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/structural.webp" alt="structural"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										Structural Fabrication
+									</p>
+								</a>
 							</div>
 
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/general.webp" alt="general"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">General Fabrication</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/general.webp" alt="general"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										General Fabrication
+									</p>
+								</a>
 							</div>
 
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/elevation.webp" alt="structural"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Elevation/Facade Service</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/elevation.webp" alt="structural"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										Elevation/Facade Service
+									</p>
+								</a>
 							</div>
 
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/wall-partition.webp" alt="metal partition"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Metal Partition</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/wall-partition.webp" alt="metal partition"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										Metal Partition
+									</p>
+								</a>
 							</div>
 
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/warehouses.webp" alt="warehouse"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Warehouses</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/warehouses.webp" alt="warehouse"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										Warehouses
+									</p>
+								</a>
 							</div>
 
 							<div class="swiper-slide content position-relative">
-								<img class="shadow rounded-3 w-100" src="images/services/custom.webp" alt="custom"/>
-
-								<p class="bg-secondary-subtle p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">Custom Jobs</p>
+								<a href="{{ path('app_contact_us') }}" class="d-block position-relative">
+									<img class="shadow rounded-3 w-100" src="images/services/custom.webp" alt="custom"/>
+									<p class="bg-secondary p-3 m-0 position-absolute start-50 top-50 translate-middle rounded-3 shadow fw-bold text-center">
+										Custom Jobs
+									</p>
+								</a>
 							</div>
+
 
 						</div>
 						<div class="swiper-pagination"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
+					<d class="d-flex justify-content-center align-items-center">
+						<a class="btn bg-primary text-secondary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill my-3" href="{{ path('app_contact_us') }}">Get in touch</a>
+					</d>
 
 
 				</div>
 			</div>
 		</section>
+
+		<hr class="bg-secondary m-0"/>
 
 		<section class="how-we-work bg-secondary">
 			<div class="container p-5">
