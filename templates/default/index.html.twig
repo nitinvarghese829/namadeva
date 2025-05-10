@@ -20,33 +20,21 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<picture>
-							<!-- Extra small screens (xs) -->
-							<source
-							srcset="uploads/carousel/carousel-sm.png" media="(max-width: 767px)">
-
-							<!-- Fallback image (if none of the above match) -->
-							<img src="uploads/carousel/carousel1.jpeg" alt="Responsive Image">
-
-						</picture>
-
-
-						{# <img src="uploads/carousel/carousel1.jpeg" class="d-block" alt="..."> #}
-
+						<img src="uploads/carousel/carousel2.jpeg" class="d-block" alt="...">
 						<div class="carousel-caption d-flex flex-column justify-content-center h-100">
 							<h1 class="animate__animated animate__backInDown">Building a
-								<span class="text-secondary">stronger tomorrow</span>
+								<span class="text-last">stronger tomorrow</span>
 								<br/>with generations of expertise</h1>
-							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-primary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
+							<a class="animate__animated animate__backInDown btn btn-primary text-secondary btn-lg w-200 m-0  text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="uploads/carousel/carousel2.jpeg" class="d-block" alt="...">
+						<img src="uploads/carousel/carousel-sheet.webp" alt="Responsive Image">
 						<div class="carousel-caption d-flex flex-column justify-content-center h-100">
 							<h1 class="animate__animated animate__backInDown">Your trusted source for
 								<br/><span class="text-primary">high-quality structural materials</span>
 							</h1>
-							<a class="animate__animated animate__backInDown btn bg-body-tertiary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
+							<a class="animate__animated animate__backInDown btn bg-primary text-black btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -61,7 +49,7 @@
 								<span class="text-primary fw-bold">excellence</span>
 								<br/>
 								in every crafted piece</h1>
-							<a class="animate__animated animate__backInDown btn bg-primary text-white btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
+							<a class="animate__animated animate__backInDown btn bg-primary text-black btn-lg w-200 m-0 text-uppercase fw-bold rounded-pill" href="{{ path('app_contact_us') }}">Get in touch</a>
 						</div>
 					</div>
 				</div>
@@ -160,9 +148,10 @@
 						<div class="d-flex align-items-center h-100">
 							<div class="">
 								<h2 class="text-last fw-bold my-2">WELCOME TO NAMDEV INFRATECH</h2>
-								<h5 class="text-secondary fw-bold my-2">Bringing 40 Years of Expertise to Your Steel Needs</h5>
-								<p>At Namdev Infratech, we’re dedicated to shaping a stronger future with our quality steel.</p>
-								<p>As a family-run business with a legacy of excellence spanning over four decades, we provide top-notch materials that suit your needs. Speak to us and see how our commitment to durability and performance can build your next project!</p>
+								<p>Namadev Infratech, founded in 2003 by Bajrang Lal Didwania, has grown into a trusted hub for industries like construction, architecture, and interior design.</p>
+								<p>What started with 25 tonnes of material now reaches 400 tonnes per month. We specialize in custom fabrication, laser cutting, and precision engineering.</p>
+								<p>More than just suppliers, we create solutions that deliver reliability and precision.</p>
+								<p>At Namadev, we build lasting partnerships with the right materials, service, and execution.</p>
 							</div>
 						</div>
 					</div>
@@ -171,7 +160,7 @@
 		</section>
 
 
-		<section class="products py-4 content">
+		<section class="products py-4 content bg-primary">
 			<div class="text-center">
 				<h2 class="text-secondary">Our Products</h2>
 				<p class="text-black-50 fst-italic fw-semibold">Durable structural solutions that ensure reliability and quality for every project</p>
@@ -183,7 +172,8 @@
 						<a href="{{ path('app_product_index') }}?type=structural-steel" class="btn btn-secondary fw-bold">Stuctural Steel</a>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-						<a href="{{ path('app_product_index') }}?type=roofing-solutions" class="btn btn-primary fw-bold text-black">Roofing Solutions</a>
+						<a href="{{ path('app_product_index') }}?type=roofing-solutions" class="btn custom-solutions fw-bold text-white">Roofing Solutions</a>
+
 					</div>
 
 					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
@@ -191,7 +181,7 @@
 					</div>
 
 					<div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-						<a href="{{ path('app_product_index') }}?type=exterior-solutions" class="btn btn-primary fw-bold text-black">Exterior Solutions</a>
+						<a href="{{ path('app_product_index') }}?type=exterior-solutions" class="btn custom-solutions fw-bold text-white">Exterior Solutions</a>
 					</div>
 				</div>
 			</div>
@@ -313,45 +303,104 @@
 			</div>
 		</section>
 
+		<section class="why-us">
+			<div class="container py-3">
+				<div class="text-center">
+					<h2 class="text-secondary">Why Us</h2>
+					<p class="text-black-50 fst-italic fw-semibold">Six reasons why clients trust us for reliable, precise, and timely industrial fabrication solutions.</p>
+				</div>
+
+				<div class="row g-4 justify-content-lg-between align-items-center justify-content-center">
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-user-graduate fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">Expertise You Trust</p>
+					</div>
+
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-cogs fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">End-to-End Service</p>
+					</div>
+
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-ruler-combined fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">Precision Guaranteed</p>
+					</div>
+
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-handshake fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">Tailored Solutions</p>
+					</div>
+
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-clock fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">On-Time Delivery</p>
+					</div>
+
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6 px-0 content">
+						<div class="icon mx-0 text-center">
+							<i class="fas fa-shield-alt fa-3x text-secondary"></i>
+						</div>
+						<p class="w-200 fw-bold text-secondary text-center">Service Warranty</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
 		<hr class="bg-secondary m-0"/>
 
 		<section class="how-we-work bg-secondary">
 			<div class="container p-5">
 				<div class="text-center mb-5">
-					<h2 class="text-primary">How We Work</h2>
+					<h2 class="text-primary">Our Process</h2>
 					<p class="text-white-50 fst-italic fw-semibold">We don't focus on selling what we want; instead, we aim to offer our customers what's truly best for them.</p>
 				</div>
 				<div class="infographic">
 					<div class="row justify-content-lg-between flex-wrap align-items-center justify-content-center">
 						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
 							<div class="icon mx-0">
-								<i class="fa-regular fa-envelope text-primary fa-2x"></i>
+								<i class="fas fa-comments text-primary fa-2x"></i>
 							</div>
-							<p class="text-tertiary fw-bold">Send an Enquiry</p>
+							<p class="text-tertiary fw-bold">Free Consultation</p>
 						</div>
+
 						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
 							<div class="icon mx-0">
-								<i class="fa-solid fa-phone text-primary fa-2x"></i>
+								<i class="fas fa-pencil-ruler text-primary fa-2x"></i>
 							</div>
-							<p class="text-tertiary fw-bold">Get a call</p>
+							<p class="text-tertiary fw-bold">Design Discussion</p>
 						</div>
+
 						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
 							<div class="icon mx-0">
-								<i class="fa-solid fa-gear text-primary fa-2x"></i>
+								<i class="fas fa-file-invoice-dollar text-primary fa-2x"></i>
 							</div>
-							<p class="text-tertiary fw-bold">Place your order</p>
+							<p class="text-tertiary fw-bold">Project Budgeting</p>
 						</div>
+
 						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
 							<div class="icon mx-0">
-								<i class="fa-solid fa-truck-fast text-primary fa-2x"></i>
+								<i class="fas fa-tools text-primary fa-2x"></i>
 							</div>
-							<p class="text-tertiary fw-bold">We'll Transport Order</p>
+							<p class="text-tertiary fw-bold">Execution Phase</p>
 						</div>
+
 						<div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 content text-center">
 							<div class="icon mx-0">
-								<i class="fa-regular fa-calendar-check text-primary fa-2x"></i>
+								<i class="fas fa-clipboard-check text-primary fa-2x"></i>
 							</div>
-							<p class="text-tertiary fw-bold">Get on-time delivery</p>
+							<p class="text-tertiary fw-bold">Final Handover</p>
 						</div>
 					</div>
 				</div>

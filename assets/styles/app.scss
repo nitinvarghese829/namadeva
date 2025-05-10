@@ -1237,3 +1237,18 @@ section.history {
 .swiper-button-prev::after {
   font-size: 20px !important;
 }
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+}
